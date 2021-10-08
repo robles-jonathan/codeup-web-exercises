@@ -47,7 +47,7 @@ var studentScheduleConflict = confirm("Is there a conflict with your schedule?")
 
 // This section would result in just a true or false at the end
 // var enroll = !classFull && !studentScheduleConflict;
-// alert(enroll);
+// alert("Student can register for class: " + enroll);
 
 
 if(classFull === false && studentScheduleConflict === false){
