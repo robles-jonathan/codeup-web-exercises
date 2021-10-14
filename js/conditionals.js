@@ -58,7 +58,7 @@ console.log(analyzeColor(randomColor));
 
     function analyzeColorSwitchCase(color){
         switch (color) {
-            case "blue": //will return same as the next
+            case "blue":
                 return "Blue is the color of the sky!";
             case "red":
                 return "Strawberries are red.";
@@ -76,7 +76,7 @@ console.log(analyzeColorSwitchCase("indigo"));
  * function to show it to the user.
  */
 
-var color = prompt("What is your favorite color?");
+var color = prompt("What is your favorite color?").toLowerCase();
 
     function analyzeColorAlert(color) {
         switch (color) {
@@ -130,7 +130,30 @@ analyzeColorAlert(color);
             return 0;
         }
     }
-
+// David Solution for Switch Case Function
+    function calculateTotalSwitch(luckyNum, total){
+        switch (luckyNum) {
+            case 1:
+                return total - (total*.1);
+            case 2:
+                return total - (total*.25);
+            case 3:
+                return total - (total*.35);
+            case 4:
+                return total - (total*.5);
+            case 5:
+                return total - total;
+            default:
+                return total;
+        }
+    }
+    console.log("calculateTotalSwitch")
+    console.log(calculateTotalSwitch(0, 100));
+    console.log(calculateTotalSwitch(4, 100));
+    console.log(calculateTotalSwitch(5, 100));
+    console.log(calculateTotalSwitch(6, 100));
+    console.log(calculateTotalSwitch(7, 100));
+    console.log("calculateTotal")
     console.log(calculateTotal(0, 100));
     console.log(calculateTotal(4, 100));
     console.log(calculateTotal(5, 100));
@@ -143,32 +166,32 @@ analyzeColorAlert(color);
 
     /**
  * TODO:
- * Uncomment the line below to generate a random number between 0 and 6.
+ * Uncomment the line below to generate a random number between 0 and 5.
  * Prompt the user for their total bill, then use your `calculateTotal` function
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
-// Generate a random number between 0 and 6
+// Generate a random number between 0 and 5
     var luckyNumber = Math.floor(Math.random() * 6);
     var totalBill = parseFloat(prompt("What is your total bill?")).toFixed(2);
     function calculateTotalPrompt(luckyNumber, totalBill){
         if (luckyNumber === 0 ){
-            alert ("Your lucky number is " + luckyNumber + ". Sorry, no discount was applied. Your total amount is: $" + totalBill + ".");
+            alert ("Your lucky number is " + luckyNumber + ". \nSorry, no discount was applied. \nYour total amount is: $" + totalBill + ".");
         }else if (luckyNumber === 1){
             var discountOne = (totalBill - (totalBill * .1)).toFixed(2);
-            alert("Your lucky number is " + luckyNumber + ". Your total amount before the discount was $" + totalBill + ". Your new total amount is: $" + discountOne + ".")
+            alert("Your lucky number is " + luckyNumber + ". \nYour total amount before the discount was $" + totalBill + ". \nYour new total amount is: $" + discountOne + ".")
         }else if (luckyNumber === 2){
             var discountTwo = (totalBill - (totalBill * .25)).toFixed(2);
-            alert("Your lucky number is " + luckyNumber + ". Your total amount before the discount was $" + totalBill + ". Your new total amount is: $" + discountTwo + ".")
+            alert("Your lucky number is " + luckyNumber + ". \nYour total amount before the discount was $" + totalBill + ". \nYour new total amount is: $" + discountTwo + ".")
         } else if (luckyNumber === 3){
             var discountThree = (totalBill - (totalBill * .35)).toFixed(2);
-            alert("Your lucky number is " + luckyNumber + ". Your total amount before the discount was $" + totalBill + ". Your new total amount is: $" + discountThree + ".")
+            alert("Your lucky number is " + luckyNumber + ". \nYour total amount before the discount was $" + totalBill + ". \nYour new total amount is: $" + discountThree + ".")
         } else if (luckyNumber === 4){
             var discountFour = (totalBill - (totalBill * .5)).toFixed(2);
-            alert("Your lucky number is " + luckyNumber + ". Your total amount before the discount was $" + totalBill + ". Your new total amount is: $" + discountFour + ".")
+            alert("Your lucky number is " + luckyNumber + ". \nYour total amount before the discount was $" + totalBill + ". \nYour new total amount is: $" + discountFour + ".")
         } else if (luckyNumber === 5){
             var discountFive = 0.00;
-            alert("Your lucky number is " + luckyNumber + ". Your total amount before the discount was $" + totalBill + ". Your new total amount is: $" + discountFive + ".")
+            alert("Your lucky number is " + luckyNumber + ". \nYour total amount before the discount was $" + totalBill + ". \nYour new total amount is: $" + discountFive + ".")
         }
     }
 
@@ -201,7 +224,7 @@ analyzeColorAlert(color);
             }else {
                 alert("The number entered was a negative number.");
             }
-        }else if (userInput % 2 === 1){
+        }else if (userInput % 2 !== 0){
             alert("The number entered was an odd number.");
             alert("The number entered plus 100 = " + (userInput+100));
             if (userInput >= 0){
@@ -213,6 +236,31 @@ analyzeColorAlert(color);
             alert("You did not enter a number.");
         }
     }
-
+// Davids Solution for Number game
+    alert("David's Solution")
+    function playNumberGame(num) {
+        var userNum = parseFloat(num);
+        if (!isNaN(userNum)) {
+            if (userNum % 2 === 0) {
+                alert(userNum + " is an even number.");
+            } else {
+                alert(userNum + " is an odd number.")
+            }
+            alert(userNum + " plus 100 is " + (100 +userNum));
+            if (userNum < 0){
+                alert(userNum + " is a negative number.");
+            } else if( userNum > 0){
+                alert(userNum + " is a positive number")
+            }else {
+                alert("You entered a zero.");
+            }
+        }
+    }
+    if (confirm("Do you want to play a game?")){
+        var userResponse = prompt("Give me a number.... Any number.")
+        playNumberGame(userResponse);
+    } else {
+        alert("Okay bye...");
+    }
 
 })();

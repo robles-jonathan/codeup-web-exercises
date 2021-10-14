@@ -18,6 +18,7 @@
     // WARM-UP FOR 10-14-21
     var hadBreakfast = Boolean(Math.round(Math.random()));
     var hadBreakfastMessage = (hadBreakfast) ? "Yes, I had breakfast!" : "No, I did not have breakfast.";
+    console.log(hadBreakfast);
     console.log(hadBreakfastMessage);
 
 })();
