@@ -190,29 +190,29 @@ analyzeColorAlert(color);
  * HINT: The way we prompt for a value could be improved
  */
 
-var userConfirm = confirm("Would you like to enter a number?");
-if (userConfirm === true){
-    var userInput = parseFloat(prompt("Please enter a number."));
-    if (userInput % 2 === 0){
-        alert("The number entered was an even number.");
-        alert("The number entered plus 100 = " + (userInput+100))
-        if(userInput >= 0 ){
-            alert("The number entered was a positive number.");
+    var userConfirm = confirm("Would you like to enter a number?");
+    if (userConfirm === true){
+        var userInput = parseFloat(prompt("Please enter a number."));
+        if (userInput % 2 === 0){
+            alert("The number entered was an even number.");
+            alert("The number entered plus 100 = " + (userInput+100))
+            if(userInput >= 0 ){
+                alert("The number entered was a positive number.");
+            }else {
+                alert("The number entered was a negative number.");
+            }
+        }else if (userInput % 2 === 1){
+            alert("The number entered was an odd number.");
+            alert("The number entered plus 100 = " + (userInput+100));
+            if (userInput >= 0){
+                alert("The number entered was a positive number.");
+            }else {
+                alert("The number entered was a negative number.");
+            }
         }else {
-            alert("The number entered was a negative number.");
+            alert("You did not enter a number.");
         }
-    }else if (userInput % 2 === 1){
-        alert("The number entered was an odd number.");
-        alert("The number entered plus 100 = " + (userInput+100));
-        if (userInput >= 0){
-            alert("The number entered was a positive number.");
-        }else {
-            alert("The number entered was a negative number.");
-        }
-    }else {
-        alert("You did not enter a number.");
     }
-}
 
 
 })();
