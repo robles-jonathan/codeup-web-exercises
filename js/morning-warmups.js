@@ -33,11 +33,15 @@
     function typeCheck(input) {
         if (typeof input === 'string'){
             return "Haha, it's a string of string!";
+        }else{
+            return typeof input;
         }
     }
 
-    console.log(typeCheck(isNaN()));
-    console.log(typeCheck(!false * 3));
-    console.log(typeCheck(4 + '4'));
+    console.log("Input is an empty string: \n" + typeCheck(''));
+    console.log("Input isNaN(): \n" + typeCheck(isNaN()));
+    console.log("Input is !false * 3: \n" + typeCheck(!false * 3));
+    console.log("Input is 4 + '4': \n" + typeCheck(4 + '4'));
+
 
 })();
