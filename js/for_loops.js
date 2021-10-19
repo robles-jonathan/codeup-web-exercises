@@ -59,6 +59,27 @@ For example:
 999999999
 */
 
+    // ANDRAWES'S SOLUTION
+    var str =""
+    for (var h = 1; h <= 9; h += 1){
+        for (var g =1; g <= h; g+=1){
+            str += h;
+        }
+        str += "\n";
+    }
+    console.log(str)
+
+    // DAVID'S SOLUTION
+    // 4 with multiple strings
+    for(var u=1; u<=9; u +=1){
+        var str2 = "";
+        for (var w = 1; w <= u; w +=1){
+            str2 +=u;
+        }
+
+    }
+
+    // MY SOLUTION
     for (var  j=1; j <10; j++){
         console.log(j.toString().repeat(j));
     }
