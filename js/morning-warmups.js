@@ -57,5 +57,11 @@
         }
     }
 
+    //Warmup: Create a function named secondToLast that accepts an array as an argument and will return the second to last element of the array.
 
+    function secondToLast(array) {
+        return array[array.length-2]
+    }
+
+    console.log(secondToLast(["first", "second", "second to last", "last"]))
 })();

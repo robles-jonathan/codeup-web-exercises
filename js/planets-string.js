@@ -33,7 +33,9 @@
     htmlString += planetsArray.join('</li><li>');
     htmlString += "</li></ul>";
 
-    document.body.innerHTML = htmlString;
-
+    document.getElementById("planets").innerHTML = planetsString;
+    document.getElementById("planetsList").innerHTML = htmlString;
+    document.write(htmlString)
+    // document.body.innerHTML = htmlString;
 
 })();
