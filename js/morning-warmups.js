@@ -65,3 +65,19 @@
 
     console.log(secondToLast(["first", "second", "second to last", "last"]))
 })();
+
+// WARM-UP October 21, 2021
+
+//Write a function named ‘moveToEnd’ that takes in an array, and returns the array with the original first index moved to the last index of the array.
+//
+// Example:
+// moveToEnd([1, 2, 3, 4]) 		  // returns [2, 3, 4, 1];
+// moveToEnd([‘roll’, ‘rock’, ‘and’]  // returns [‘rock’, ‘and’, ‘roll’];
+function moveToEnd(array){
+    var removedElement = array.shift();
+    array.push(removedElement);
+    console.log(array);
+    return array;
+}
+moveToEnd([1,2,3,4]);
+moveToEnd(["rock","and","roll"]);
