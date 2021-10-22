@@ -144,6 +144,13 @@
      *      ---
      *      ...
      */
+    // for (var j = 0; j < books.length; j++) {
+    //     var output;
+    //     output = 'Book # ' + (j+1) + '\nTitle: ' + books[j].title + '\nAuthor: ' + books[j].author.firstName + ' ' + books[j].author.lastName + '\n---';
+    //     // console.log('Book # ' + (j+1) + '\nTitle: ' + books[j].title + '\nAuthor: ' + books[j].author.firstName + ' ' + books[j].author.lastName + '\n---');
+    //     console.log(output);
+    //     // return output;
+    // }
 
     books.forEach(function(book,index){
         var output;
@@ -164,15 +171,15 @@
     function createBook(title, author){
         var firstName = author.split(" ")[0];
         var lastName = author.split(" ")[1];
-        var bookInfo = {
+        var newBook = {
             title: title,
             author: {
                 firstName: firstName,
                 lastName: lastName
             }
         }
-        console.log(bookInfo);
-        books.push(bookInfo);
+        console.log(newBook);
+        books.push(newBook);
     }
     createBook("The Outsider", "Stephen King");
     console.log(books);
