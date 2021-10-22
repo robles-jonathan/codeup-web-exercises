@@ -11,7 +11,12 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-
+    var person = {
+        firstName: "Jonathan",
+        lastName: "Robles"
+    }
+    console.log(person.firstName);
+    console.log(person.lastName);
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -21,7 +26,10 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-
+    person.sayhello = function () {
+        return "Hello, from " + this.firstName + " " + this.lastName + "!";
+    }
+    console.log(person.sayhello());
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
@@ -36,11 +44,49 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    var discountsOfToday = 0;
+    shoppers.forEach(function (shopper) {
+        var output = "";
+        if (shopper.amount > 200){
+            var discount = shopper.amount * .12;
+            var discountedTotal = shopper.amount - discount;
+            output += "Thank you for shopping with us " + shopper.name + "! \n" +
+                "SUB TOTAL: " + shopper.amount.toFixed(2) + "\n" +
+                "DISCOUNT: " + discount.toFixed(2) + "\n" +
+                "TOTAL: " + discountedTotal.toFixed(2);
+            console.log(output)
+            return output;
+        }else {
+            output += "Thank you for shopping with us " + shopper.name + "! \n" +
+                "TOTAL: " + shopper.amount.toFixed(2);
+            console.log(output);
+            return output;
+        }
+    })
+    shoppers.forEach(function (shopper) {
+        var output = "";
+        if (shopper.amount > 200){
+            var discount = shopper.amount * .12;
+            var discountedTotal = shopper.amount - discount;
+            output += "Thank you for shopping with us " + shopper.name + "! \n" +
+                "SUB TOTAL: " + shopper.amount.toFixed(2) + "\n" +
+                "DISCOUNT: " + discount.toFixed(2) + "\n" +
+                "TOTAL: " + discountedTotal.toFixed(2);
+            console.log(output)
+            return output;
+        }else {
+            output += "Thank you for shopping with us " + shopper.name + "! \n" +
+                "TOTAL: " + shopper.amount.toFixed(2);
+            console.log(output);
+            return output;
+        }
+    })
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -54,6 +100,44 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+    var books;
+    books =[
+        {
+            title: "Pride and Prejudice",
+            author: {
+                firstName: "Jane",
+                lastName: "Austen"
+            }
+        },
+        {
+            title: 'To Kill a Mockingbird',
+            author: {
+                firstName: 'Harper',
+                lastName: 'Lee',
+            }
+        },
+        {
+            title: 'The Da Vinci Code',
+            author: {
+                firstName: 'Dan',
+                lastName: 'Brown',
+            }
+        },
+        {
+            title: 'The Hunger Games',
+            author: {
+                firstName: 'Suzanne',
+                lastName: 'Collins',
+            }
+        },
+        {
+            title: 'Lord of the Flies',
+            author: {
+                firstName: 'William',
+                lastName: 'Golding',
+            }
+        }
+    ]
 
     /**
      * TODO:
@@ -79,7 +163,34 @@
      *      ---
      *      ...
      */
-
+    // var discountsOfToday = 0;
+    // shoppers.forEach(function (shopper) {
+    //     var output = "";
+    //     if (shopper.amount > 200){
+    //         var discount = shopper.amount * .12;
+    //         var discountedTotal = shopper.amount - discount;
+    //         output += "Thank you for shopping with us " + shopper.name + "! \n" +
+    //             "SUB TOTAL: " + shopper.amount.toFixed(2) + "\n" +
+    //             "DISCOUNT: " + discount.toFixed(2) + "\n" +
+    //             "TOTAL: " + discountedTotal.toFixed(2);
+    //         console.log(output)
+    //         return output;
+    //     }else {
+    //         output += "Thank you for shopping with us " + shopper.name + "! \n" +
+    //             "TOTAL: " + shopper.amount.toFixed(2);
+    //         console.log(output);
+    //         return output;
+    //     }
+    // })
+    books.forEach(function(book,index){
+        var output;
+        output = "Book #" + (index + 1) + "\n" +
+            "Title: " + book.title + "\n" +
+            "Author: " + book.author.firstName + " " + book.author.lastName + "\n" +
+            "---";
+        console.log(output);
+        return output;
+    })
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
