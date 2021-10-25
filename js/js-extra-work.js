@@ -1081,19 +1081,58 @@
         }
     ]
 
+    console.log(Number(profiles[1].balance.replace(/[^0-9.-]+/g, "")));
+    console.log(profiles[1].balance);
+    console.log(parseFloat(profiles[1].balance));
 // Exercise 5. Create an object named profileReport and add the following methods that use the "profiles" JSON data.
     var profileReport ={
+        //  getProfileCount() should return the total number of profiles
         getProfileCount: function () {
             return profiles.length;
+        },
+        //  getActiveCount() should return the number of active profiles
+        getActiveCount: function () {
+            var activeCount = 0;
+            for (var i = 0; i < profiles.length; i++) {
+                if (profiles[i].isActive === true){
+                    activeCount ++ ;
+                }
+            }
+            return activeCount;
+        },
+        //  getInactiveCount() should return the number of inactive profiles
+        getInactiveCount: function () {
+            var inactiveCount = 0;
+            for (var i = 0; i < profiles.length; i++){
+                if (profiles[i].isActive === false){
+                    inactiveCount ++;
+                }
+            }
+            return inactiveCount;
+        },
+        //  sumOfAllBalances() should return sum of the balance of all profiles
+        sumOfAllBalances: function() {
+            var sumOfBalances = 0;
+            for (var i = 0; i < profiles.length; i++) {
+                sumOfBalances += Number(profiles[i].balance.replace(/[^0-9.-]+/g, ""));
+            }
+            return sumOfBalances.toFixed(2);
+        },
+        //  getAverageBalance() should return the average balance per users
+        getAverageBalance: function(){
+            return this.sumOfAllBalances()/this.getProfileCount();
+        },
+        //  getLowestBalance() should return the customer name with the lowest balance
+        getLowestBalance: function(){
+
         }
     }
-    console.log(profileReport.getProfileCount());
-//  getProfileCount() should return the total number of profiles
-//  getActiveCount() should return the number of active profiles
-//  getInactiveCount() should return the number of inactive profiles
-//  sumOfAllBalances() should return sum of the balance of all profiles
-//  getAverageBalance() should return the average balance per users
-//  getLowestBalance() should return the customer name with the lowest balance
+    console.log("There are " + profileReport.getProfileCount() + " profiles in the report.");
+    console.log("There are " + profileReport.getActiveCount() + " active profiles in the report.");
+    console.log("There are " + profileReport.getInactiveCount() + " inactive profiles in the report.");
+    console.log("The sum of all balances is : $" + profileReport.sumOfAllBalances() + ".");
+    console.log("The average balance is : $" + profileReport.getAverageBalance() + ".");
+
 //  getHighestBalance() should return the customer name with the highest balance
 //  getMostFavoriteFruit() should return the most common fruit
 //  getLeastFavoriteFruit() should return the least favorite fruit
