@@ -81,3 +81,21 @@ function moveToEnd(array){
 }
 moveToEnd([1,2,3,4]);
 moveToEnd(["rock","and","roll"]);
+
+
+var slowbro = {
+    pokedexNumber: 79,
+    name: "Slowbro",
+    height: {
+        feet: 5,
+        inches: 3
+    },
+    weight: 173.1,
+    description: "Slowpoke became Slowbro when a Shellder bit on to its tail. Sweet flavors seeping from the tail make the Shellder feel as if its life is a dream.",
+    category: "Hermit Crab",
+    abilities: ["Oblivious", "Own Tempo"],
+    type:["Water", "Psychic"],
+    weaknesses: ["Ghost", "Dark", "Grass", "Electric", "Bug"]
+}
+console.log(slowbro);
+
