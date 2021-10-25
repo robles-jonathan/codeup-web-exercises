@@ -122,7 +122,17 @@ makeCar("VW", "Beetle")
 // 10, Henry, Kissinger, 1
 // 11, Arthur Herbert, Fonzarelli, 23
 // 12, Betty, Boop, 67
-
+var salesReport = {
+    title: "Monthly Sales Report",
+    date: "03-17-2015",
+    office: "Codeup",
+    employees : {
+        employeeNumber: 1,
+        firstName: "Jane",
+        lastName: "Janeway",
+        salesUnits: 3
+    }
+}
 // Exercise 3. On the salesReport object you made, add the following methods.
 // getEmployeeCount() should return the total number of employees
 // getTotalNumberOfSales() should return the total number of units sold
