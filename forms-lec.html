@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms Lecture</title>
+</head>
+<body>
+<main>
+    <h1>Forms Lecture</h1>
+    <form method="POST" action="https://request-inspector.glitch.me/">
+        <label for="username">Username</label>
+        <input id="username" name="user" type="text" placeholder="Username">
+        <br>
+        <label for="password">Password</label>
+        <input name="password" id="password" type="password">
+        <br>
+        <label for="bio">Tell Me About Yourself</label>
+        <br>
+        <textarea name="bio" id="bio" cols="30" rows="10">My life is wrought with strife and virtue.</textarea>
+        <br>
+        <label for="emailSignup">
+            <input type="checkbox" id="emailSignup" name="emailSignup" > Would you care to subscribe to our
+            newsletter?
+        </label>
+        <br>
+        <hr>
+        <h3>Check all that are true:</h3>
+        <label for="quiz-1">Pluto is a dwarf planet</label><input type="checkbox" name="quiz" id="quiz-1" value="A"><br>
+        <label for="quiz-2">Pluto is Mickey's pet dog</label><input type="checkbox" name="quiz" id="quiz-2"
+                                                                    value="B"><br>
+        <label for="quiz-3">Pluto is one of the Sailor Scouts on Sailor Moon</label><input type="checkbox" name="quiz"
+                                                                                           id="quiz-3" value="C"><br>
+        <label for="quiz-4">Pluto is larger than the sun</label><input type="checkbox" name="quiz" id="quiz-4"
+                                                                       value="D"><br>
+        <br>
+        <hr>
+        <h3>"Radio Gaga" is a song by the band ____</h3>
+        <input type="radio" name="radioQuestion" id="radioQuestion-1" value="hall and oates"><label for="radioQuestion-1">Hall & Oates</label>
+        <input type="radio" name="radioQuestion" id="radioQuestion-2" value="queen"><label for="radioQuestion-2">Queen</label>
+        <input type="radio" name="radioQuestion" id="radioQuestion-3" value="red velvet"><label for="radioQuestion-3">Red Velvet</label>
+        <input type="radio" name="radioQuestion" id="radioQuestion-4" value="lady gaga"><label for="radioQuestion-4">Lady Gaga</label>
+        <hr>
+        <br>
+        <label for="select">What's you favorite video game conosole?</label>
+        <select name="vg-console" id="select">
+            <option value="atari-5200">Atari 5200</option>
+            <option value="colecovision-amico">ColecoVision Amico</option>
+            <option value="3do">3-DO</option>
+            <option value="vectrex">Vectrex</option>
+            <option value="jaguar">Atari Jaguar</option>
+        </select>
+        <br>
+        <br>
+        <input type="hidden" name="secret-user-id" value="10">
+        <br>
+        <br>
+        <label for="gender">Are you a boy or girl?</label>
+        <input type="text" disabled id="gender" name="gender" value="male">
+        <br>
+        <br>
+        <button type="submit"> Send off Your Information, My funky Guy/Gal/Non-binary Pal</button>
+    </form>
+</main>
+
+</body>
+</html>
