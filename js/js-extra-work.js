@@ -1,5 +1,5 @@
 'use strict';
-(function() {
+(function () {
 
 // Less Than 100
 
@@ -70,7 +70,7 @@
 
      */
 
-    function bitwiseAND(n1,n2){
+    function bitwiseAND(n1, n2) {
         return n1 & n2;
     }
 
@@ -92,11 +92,12 @@
 
 // Exercise 1. Write a function called makeCar that takes in two strings, make and model, and returns an object with those properties
 // Example: makeCar("VW", "beetle") returns the object {"make": "VW", "model", "beetle"}
-function makeCar(make, model){
-    console.log({make:make, model:model});
-    return {make: make, model: model}
-}
-makeCar("VW", "Beetle")
+    function makeCar(make, model) {
+        console.log({make: make, model: model});
+        return {make: make, model: model}
+    }
+
+    makeCar("VW", "Beetle")
 
 // Exercise 2. Use the following data to create an object named salesReport.
 //     The object should have the following properties:
@@ -111,28 +112,91 @@ makeCar("VW", "Beetle")
 // ===================================================
 // Employee Number, First Name, Last Name, Sales Units
 // ***************************************************
-// 1, Jane, Janeway, 3
-// 3, Tricia, Triciason, 5
-// 4, Jeannette, Jeanson, 4
-// 5, Charles Emmerson III, Winchester, 2
-// 6, Chet, Chedderson, 8
-// 7, Chaiam, Chaiamson, 12
-// 8, Dale, Dalesinger, 1
-// 9, Zig, Ziglar, 50
-// 10, Henry, Kissinger, 1
-// 11, Arthur Herbert, Fonzarelli, 23
-// 12, Betty, Boop, 67
-var salesReport = {
-    title: "Monthly Sales Report",
-    date: "03-17-2015",
-    office: "Codeup",
-    employees : {
-        employeeNumber: 1,
-        firstName: "Jane",
-        lastName: "Janeway",
-        salesUnits: 3
+
+    var salesReport = {
+        title: "Monthly Sales Report",
+        date: "03-17-2015",
+        office: "Codeup",
+        employees: [
+            // 1, Jane, Janeway, 3
+            {
+                employeeNumber: 1,
+                firstName: "Jane",
+                lastName: "Janeway",
+                salesUnits: 3
+            },
+            // 3, Tricia, Triciason, 5
+            {
+                employeeNumber: 1,
+                firstName: "Jane",
+                lastName: "Janeway",
+                salesUnits: 3
+            },
+            // 4, Jeannette, Jeanson, 4
+            {
+                employeeNumber: 1,
+                firstName: "Jane",
+                lastName: "Janeway",
+                salesUnits: 3
+            },
+            // 5, Charles Emmerson III, Winchester, 2
+            {
+                employeeNumber: 1,
+                firstName: "Jane",
+                lastName: "Janeway",
+                salesUnits: 3
+            },
+            // 6, Chet, Chedderson, 8
+            {
+                employeeNumber: 1,
+                firstName: "Jane",
+                lastName: "Janeway",
+                salesUnits: 3
+            },
+            // 7, Chaiam, Chaiamson, 12
+            {
+                employeeNumber: 1,
+                firstName: "Jane",
+                lastName: "Janeway",
+                salesUnits: 3
+            },
+            // 8, Dale, Dalesinger, 1
+            {
+                employeeNumber: 1,
+                firstName: "Jane",
+                lastName: "Janeway",
+                salesUnits: 3
+            },
+            // 9, Zig, Ziglar, 50
+            {
+                employeeNumber: 1,
+                firstName: "Jane",
+                lastName: "Janeway",
+                salesUnits: 3
+            },
+            // 10, Henry, Kissinger, 1
+            {
+                employeeNumber: 1,
+                firstName: "Jane",
+                lastName: "Janeway",
+                salesUnits: 3
+            },
+            // 11, Arthur Herbert, Fonzarelli, 23
+            {
+                employeeNumber: 1,
+                firstName: "Jane",
+                lastName: "Janeway",
+                salesUnits: 3
+            },
+            // 12, Betty, Boop, 67
+            {
+                employeeNumber: 1,
+                firstName: "Jane",
+                lastName: "Janeway",
+                salesUnits: 3
+            },
+        ]
     }
-}
 // Exercise 3. On the salesReport object you made, add the following methods.
 // getEmployeeCount() should return the total number of employees
 // getTotalNumberOfSales() should return the total number of units sold
