@@ -6,25 +6,55 @@
 </head>
 <body>
 <main>
-    <h1>Forms Exercise</h1>
-    <form method="POST" action="https://request-inspector.glitch.me/">
+    <h1>Register With Us - Veridian Dynamics</h1>
+    <form method="POST" action="https://www.elformo.com/forms/e6b9b56a-aca6-4d36-a8ea-844181fe9ebc">
         <label for="email">Email</label>
         <br>
-        <input type="text" placeholder="Enter your email address" id="email">
+        <input type="text" placeholder="Enter your email address" id="email" name="email">
         <br>
         <label for="password">Password</label>
         <br>
-        <input type="text" placeholder="Enter your password" id="password">
+        <input type="password" placeholder="Enter your password" id="password" name="password">
         <br>
-        <label for="bio">Bio</label>
+        <label for="bio">Tell us about yourself</label>
         <br>
         <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Enter your bio"></textarea>
         <br>
         <hr>
+        <!--Create a "How did you hear about us" section that contains radio buttons. The values should be
+"billboard", "radio advertisement", "internet advertisement", and "other". Only one of the values should be allowed to be selected at a time.
+What happens if the inputs are given different name attributes? MORE THAN ONE VALUE WOULD BE ALLOWED TO BE SELECTED
+Change these inputs so that multiple answers are allowed to be selected.        -->
         <section>
             <h3>How did you hear about us?</h3>
-            <input type="radio" name="question1">
+            <label for="question1-1">
+                <input type="radio" name="question1" id="question1-1" value="billboard"> Billboard
+            </label>
+            <label for="question1-2">
+                <input type="radio" name="question1" id="question1-2" value="radio advertisement"> Radio Advertisement
+            </label>
+            <label for="question1-3">
+                <input type="radio" name="question1" id="question1-3" value="internet advertisement"> Internet
+                Advertisement
+            </label>
+            <label for="question1-4">
+                <input type="radio" name="question1" id="question1-4" value="other"> Other
+            </label>
         </section>
+        <!--        Create a dropdown that asks the user what web browser they are using.-->
+        <section>
+            <label for="web-browser-select">What web browser are you using?</label>
+            <select name="web-browser-select" id="web-browser-select">
+                <option value="chrome">Chrome</option>
+                <option value="safari">Safari</option>
+                <option value="firefox">Firefox</option>
+            </select>
+        </section>
+        <hr>
+        <br>
+        <br>
+        <p>Thank you for registering with us!!!</p>
+        <button type="submit">Register</button>
     </form>
 </main>
 </body>
