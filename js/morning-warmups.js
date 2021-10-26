@@ -129,5 +129,17 @@ function getCanadianWrestlers(array){
     }
     return canadianWrestlers;
 }
+//Alternate using forEach loop
+function filterForCanadians(arr){
+    var bucket = [];
+    arr.forEach(function(element){
+        if (element.nationality === "Canadian"){
+            bucket.push(element);
+        }
+    });
+    return bucket;
+}
+
 
 console.log(getCanadianWrestlers(wrestlers));
+console.log(filterForCanadians(wrestlers));
