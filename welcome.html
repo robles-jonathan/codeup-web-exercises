@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <header id="top">
-    <h1>Welcome to Veridian Dynamics!</h1>
+    <h1 class="fancy-header">Welcome to Veridian Dynamics!</h1>
     <p>At Veridian Dynamics, <strong>we</strong> solve <em>your</em> problems with <strong><em>technology.</em></strong>
     </p>
 </header>
@@ -73,3 +74,31 @@
 </footer>
 </body>
 </html>
+
+
+<!--
+Exercises
+For this exercise, we will continue working with the welcome.html file. We will talk about the syntax of css selectors
+and properties in the next lesson, but for now, use the examples above to complete the exercise.
+
+1. Use a style attribute to set the font color of the h1 element to red.
+
+2. Add a class of "fancy-header" to your h1 element, and create an embedded stylesheet and based on the example above.
+
+    What color is the h1 after creating the embedded stylesheet? Still is red.
+    Remove the style attribute from your h1 and view the page again. Now it is Blue with underline.
+
+3. Create a directory named css in your project. Within this directory, create a file named style.css,
+    and include a link to it in your html document.
+
+4. Inside of style.css, copy the above css, but change to font color to purple.
+    What color is the h1 after making this change? IF link is before style then it stays blue, if link is after style then it turns purple.
+    Remove your embedded stylesheet and view the page again. Now it is purple
+
+5. What do the above exercises tell you about the precedence of style attributes and embedded and external stylesheets?
+    Style attributes take precedence over embedded and external stylesheets
+    The order of stylesheets embedded and external will take precedence top to bottom last one will take precedence
+
+6. Remove any style attributes and embedded stylesheets. From this point forward, we will only be working with external stylesheets.
+
+-->
