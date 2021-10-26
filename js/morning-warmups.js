@@ -98,4 +98,36 @@ var slowbro = {
     weaknesses: ["Ghost", "Dark", "Grass", "Electric", "Bug"]
 }
 console.log(slowbro);
+var wrestlers = [
+    {
+        name: "Bret Hart",
+        nationality: "Canadian"
+    }, {
+        name: "Shawn Michaels",
+        nationality: "American"
+    }, {
+        name: "Christian Cage",
+        nationality: "Canadian"
+    }, {
+        name: "Keiji Mutoh",
+        nationality: "Japanese"
+    }, {
+        name: "Eddy Guerrero",
+        nationality: "American"
+    }, {
+        name: "Owen Hart",
+        nationality: "Canadian"
+    }
+];
 
+function getCanadianWrestlers(array){
+    var canadianWrestlers = [];
+    for (var i = 0;i < array.length; i++){
+        if (array[i].nationality === "Canadian"){
+            canadianWrestlers.push(array[i]);
+        }
+    }
+    return canadianWrestlers;
+}
+
+console.log(getCanadianWrestlers(wrestlers));
