@@ -1,5 +1,63 @@
 /*Selectors*/
 /*HTML Element Selectors*/
 h1 {
+    color: red;
+}
 
+/*Class Selector*/
+.orange-bg{
+     background-color:orange;
+}
+.blue-bg{
+    background-color:blue;
+}
+
+/*ID Selector*/
+#back-to-top{
+    text-decoration: none;
+    color: magenta;
+}
+
+#blue-bg{
+    background-color:blue;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+/*Descendant Selector*/
+.blue-bg li {
+    font-family: Helvetica, sans-serif;
+    color: orange;
+}
+#parent-div h2{
+    color: lightblue;
+}
+main th{
+    color: darkblue;
+}
+
+/*Direct Child Selector*/
+#type>h2{
+    text-decoration: underline;
+    color: darkgreen;
+}
+
+/*Combination Selector*/
+ul.blue-bg{
+    font-size: 34px;
+}
+
+a:link{
+    color: darkcyan;
+}
+a:visited{
+    color:limegreen;
+}
+a:hover{
+    color: indianred;
+}
+a:active{
+    color:goldenrod;
 }
