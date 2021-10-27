@@ -143,3 +143,17 @@ function filterForCanadians(arr){
 
 console.log(getCanadianWrestlers(wrestlers));
 console.log(filterForCanadians(wrestlers));
+
+//Warmup
+//
+// Find the area of the circle, and round it to the nearest whole number using the Math object.
+var circle = {
+    radius: 36
+}
+
+
+// hint: area = pi * radius^2
+var areaOfCircle = function(){
+    return Math.round(Math.PI*Math.pow(circle.radius,2));
+}
+console.log("The area of the circle rounded to the nearest whole number is: "+ areaOfCircle())
