@@ -1,0 +1,82 @@
+/*DONE Center the main heading*/
+#main-header{
+    text-align: center;
+}
+/*Add a style to change the color of the headers on your page and make them underlined.*/
+h3{
+    text-decoration: underline;
+}
+/*DONE Add a style to change the background color of the page.*/
+/*DONE Add a style to change the font for the entire page. Use google fonts if you would like.*/
+/*DONE Add a style to add a background image to your background. Search how to manipulate the position, sizing of this background image.*/
+body {
+    background-color: dodgerblue;
+    font-family: 'Architects Daughter', cursive;
+    background-image: url("../img/Daco_4480722.png");
+    background-position-x: center;
+    background-repeat: no-repeat;
+}
+
+
+
+/*DONE Add a style to change the list-style to something other than the default bullet.*/
+li{
+    list-style-type: "\1F44D"; /*thumbs up symbol*/
+}
+
+/*DONE Add a style to change the table, table cells td and rows tr padding and font sizes.*/
+table{
+    margin: 30px auto;
+    box-shadow: 0 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+.fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+.fl-table th {
+    color: #ffffff;
+    background: #4FC3A1;
+}
+
+
+.fl-table th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
+
+/*DONE Add a style to alter the anchor tags and its different states. (e.g. link, visited, hover and active).*/
+a:link{
+    color: darkorange;
+}
+a:visited{
+    color:limegreen;
+}
+a:hover{
+    color: hotpink;
+}
+a:active{
+    color:goldenrod;
+}
+
