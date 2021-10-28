@@ -2,7 +2,9 @@
     padding: 0;
     margin: 0;
 }
-
+:root{
+    --btn-padding: 8px;
+}
 body, html {
     height: 100%;
     width: 100%;
@@ -55,7 +57,7 @@ fieldset {
 
 .btn {
     /* There must be a separation of 8px between the text and the border of this element */
-    padding: 8px;
+    padding: var(--btn-padding);
     /* The text color of this element should be white and bold */
     color:white;
     font-weight: bold;
@@ -73,7 +75,8 @@ fieldset {
     /* See the example at: https://developer.mozilla.org/en-US/docs/Web/CSS/calc */
     /* HINT: Calculate based on the padding of the `.btn` class */
     /* HINT: Examples are available at: https://glitch.com/~input-button-width */
-    width: calc(100% - 4px);
+    /*width: calc(100% - 4px);*/
+    width: calc(100% - (var(--btn-padding)/2))
 }
 
 
