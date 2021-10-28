@@ -1,0 +1,47 @@
+:root {
+    --main-bg-color: black;
+}
+body{
+    background-color: var(--main-bg-color);
+    color: black;
+}
+.title{
+    text-align: center;
+}
+.steps{
+    background-color:yellow;
+    height: fit-content;
+    /*padding: !*top-bottom*!20px !*left-right*!10px ;*/
+    /*padding: 10px 30px 20px 5px;*/
+    padding:10px;
+    border-radius:10px;
+    margin: 10px;
+}
+.ingredients{
+    background-color:blue;
+    height: fit-content;
+    /*padding: !*top-bottom*!20px !*left-right*!10px ;*/
+    /*padding: 10px 30px 20px 5px;*/
+    padding:10px;
+    border-radius:10px;
+    margin: 10px;
+}
+.container{
+    border: 3px solid white; /*size, style, color*/
+    width: 30%;
+    margin: 10px auto;
+}
+#content-area-1{
+    background-color:coral;
+    width: 100px;
+    height: 100px;
+}
+#content-area-2{
+    background-color:darkcyan;
+    width: 100px;
+    height: 100px;
+}
+
+
+
+
