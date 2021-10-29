@@ -1123,9 +1123,9 @@
             return this.sumOfAllBalances()/this.getProfileCount();
         },
         //  getLowestBalance() should return the customer name with the lowest balance
-        getLowestBalance: function(){
-
-        }
+        // getLowestBalance: function(){
+        //
+        // }
     }
     console.log("There are " + profileReport.getProfileCount() + " profiles in the report.");
     console.log("There are " + profileReport.getActiveCount() + " active profiles in the report.");
@@ -1166,4 +1166,29 @@
 // See how both the "input" and "textInput" varialbes are referencing the same underlying HTML element?
 // This behavior is another example of "assignment by reference"
 
+
+
+
+    //RE-TAKE ASSESSMENT QUESTIONS
+    //8. Write a function named addStringLengths that takes in two inputs.
+    // If both inputs provided are strings, addStringLengths returns the sum after adding the length (number of characters) of both strings.
+    // If either or both inputs are not strings, return false.
+
+    function addStringLengths(a, b) {
+        if(typeof a === 'string' && typeof b === 'string') {
+            var sum = a.length + b.length
+            return sum;
+        } else {
+            return false
+        }
+    }
+
+    console.log(addStringLengths("code", "up"));
+    console.log(addStringLengths("ranking", 1));
+    console.log(addStringLengths("Grace Hopper", "Ada Lovelace"));
+    console.log(addStringLengths("abcdefghijklmnopqrstuvwxyz", "0123456789"));
+    console.log(addStringLengths(null, null));
+    console.log(addStringLengths(true, false));
+    console.log(addStringLengths([], "string"));
+    console.log(addStringLengths("", ""));
 })();
