@@ -82,7 +82,38 @@
         return n1 ^ n2;
     }
 
+// sum of an Array
+    function simpleArraySum(ar) {
+        // Write your code here
+        var sum =0;
+        for(var i=0; i < ar.length; i++)
+        {
+            sum += ar[i]
+        }
+        return sum;
+    }
 
+    function compareTriplets(a, b) {
+        // Write your code here
+        var alicePoints = 0;
+        var bobPoints = 0;
+        for (var i=0 ; i<a.length; i++)
+            if(parseInt(a[i])>parseInt(b[i])){
+                console.log(a[i])
+                alicePoints ++;
+            }else if(parseInt(a[i])<parseInt(b[i])){
+                console.log(a[i])
+                bobPoints ++;
+            }else if(parseInt(a[i]) === parseInt(b[i])){
+                console.log(a[i])
+                alicePoints += 0;
+            }
+        return alicePoints + ' ' + bobPoints
+    }
+
+    console.log(compareTriplets([5, 6, 7], [3, 6, 10]));
+
+    console.log(simpleArraySum([2, 34, 5, 6, 7, 8, 100]));
     /*
      * Title: JS Objects Practice
      * Author: Ryan Orsinger
