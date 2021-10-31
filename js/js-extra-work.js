@@ -85,9 +85,8 @@
 // sum of an Array
     function simpleArraySum(ar) {
         // Write your code here
-        var sum =0;
-        for(var i=0; i < ar.length; i++)
-        {
+        var sum = 0;
+        for (var i = 0; i < ar.length; i++) {
             sum += ar[i]
         }
         return sum;
@@ -97,14 +96,14 @@
         // Write your code here
         var alicePoints = 0;
         var bobPoints = 0;
-        for (var i=0 ; i<a.length; i++)
-            if(parseInt(a[i])>parseInt(b[i])){
+        for (var i = 0; i < a.length; i++)
+            if (parseInt(a[i]) > parseInt(b[i])) {
                 console.log(a[i])
-                alicePoints ++;
-            }else if(parseInt(a[i])<parseInt(b[i])){
+                alicePoints++;
+            } else if (parseInt(a[i]) < parseInt(b[i])) {
                 console.log(a[i])
-                bobPoints ++;
-            }else if(parseInt(a[i]) === parseInt(b[i])){
+                bobPoints++;
+            } else if (parseInt(a[i]) === parseInt(b[i])) {
                 console.log(a[i])
                 alicePoints += 0;
             }
@@ -240,7 +239,7 @@
             return total;
         },
         getAverageSalesPerEmployee: function () {
-            return this.getTotalNumberOfSales()/this.getEmployeeCount()
+            return this.getTotalNumberOfSales() / this.getEmployeeCount()
         }
     }
     console.log("Total Number of Sales: " + salesReport.getTotalNumberOfSales());
@@ -1116,7 +1115,7 @@
     console.log(profiles[1].balance);
     console.log(parseFloat(profiles[1].balance));
 // Exercise 5. Create an object named profileReport and add the following methods that use the "profiles" JSON data.
-    var profileReport ={
+    var profileReport = {
         //  getProfileCount() should return the total number of profiles
         getProfileCount: function () {
             return profiles.length;
@@ -1125,8 +1124,8 @@
         getActiveCount: function () {
             var activeCount = 0;
             for (var i = 0; i < profiles.length; i++) {
-                if (profiles[i].isActive === true){
-                    activeCount ++ ;
+                if (profiles[i].isActive === true) {
+                    activeCount++;
                 }
             }
             return activeCount;
@@ -1134,15 +1133,15 @@
         //  getInactiveCount() should return the number of inactive profiles
         getInactiveCount: function () {
             var inactiveCount = 0;
-            for (var i = 0; i < profiles.length; i++){
-                if (profiles[i].isActive === false){
-                    inactiveCount ++;
+            for (var i = 0; i < profiles.length; i++) {
+                if (profiles[i].isActive === false) {
+                    inactiveCount++;
                 }
             }
             return inactiveCount;
         },
         //  sumOfAllBalances() should return sum of the balance of all profiles
-        sumOfAllBalances: function() {
+        sumOfAllBalances: function () {
             var sumOfBalances = 0;
             for (var i = 0; i < profiles.length; i++) {
                 sumOfBalances += Number(profiles[i].balance.replace(/[^0-9.-]+/g, ""));
@@ -1150,8 +1149,8 @@
             return sumOfBalances.toFixed(2);
         },
         //  getAverageBalance() should return the average balance per users
-        getAverageBalance: function(){
-            return this.sumOfAllBalances()/this.getProfileCount();
+        getAverageBalance: function () {
+            return this.sumOfAllBalances() / this.getProfileCount();
         },
         //  getLowestBalance() should return the customer name with the lowest balance
         // getLowestBalance: function(){
@@ -1198,15 +1197,13 @@
 // This behavior is another example of "assignment by reference"
 
 
-
-
     //RE-TAKE ASSESSMENT QUESTIONS
     //8. Write a function named addStringLengths that takes in two inputs.
     // If both inputs provided are strings, addStringLengths returns the sum after adding the length (number of characters) of both strings.
     // If either or both inputs are not strings, return false.
 
     function addStringLengths(a, b) {
-        if(typeof a === 'string' && typeof b === 'string') {
+        if (typeof a === 'string' && typeof b === 'string') {
             var sum = a.length + b.length
             return sum;
         } else {
@@ -1222,4 +1219,41 @@
     console.log(addStringLengths(true, false));
     console.log(addStringLengths([], "string"));
     console.log(addStringLengths("", ""));
+
+    function vowelsAndConsonants(s) {
+        const vowels = 'aeiou';
+        var consonants = '';
+        for (var i = 0; i < s.length; i++) {
+            if (vowels.includes(s[i])) {
+                console.log(s[i]);
+            } else {
+                consonants += s[i] + '\n';
+            }
+        }
+
+        console.log(consonants.trim());
+    }
+
+    //Return a cubed
+    function cubes(a) {
+        return a ** 3
+    }
+
+    console.log(cubes(4));
+
+
+    //Return sum of numbers divisible by 3 or 5 under inputted number
+    function sumOfNumbersUnderInput(a) {
+        var sum = 0;
+        for (var i = 0; i < a; i++) {
+            if (i % 3 === 0 || i % 5 === 0) {
+                console.log(i);
+                sum += i;
+            }
+        }
+        return sum;
+    }
+
+    console.log(sumOfNumbersUnderInput(10))
+
 })();
