@@ -89,14 +89,37 @@ a {
 }
 .timeline{
     float:left;
-    width: calc(50% - 1em);% - .5em;
+    width: calc(50% - 1em);
     margin: 0 .5em;
 }
 .who-to-follow{
     float: left;
-    /*width: 25%;*/
+    width: calc(25% - 1em);
     margin: 0 .5em;
 }
 .container{
     margin-top: 2em;
+}
+.media{
+    width: 100%;
+    background: var(--light-bg);
+    border-bottom: 1px solid var(--separator-color);
+    padding: .5em;
+    overflow:auto;
+}
+.media-image{
+    max-width: 50px;
+    float: left;
+    margin-top: 1.33em;
+}
+.media-body{
+    float: left;
+    width: calc(100% - 50px)
+}
+.profile-items{
+    list-style: none;
+    padding: 0;
+}
+.profile-entry{
+    margin: .5em;
 }
