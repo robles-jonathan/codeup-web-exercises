@@ -1253,7 +1253,6 @@
         }
         return sum;
     }
-
     console.log(sumOfNumbersUnderInput(10))
 
 })();
