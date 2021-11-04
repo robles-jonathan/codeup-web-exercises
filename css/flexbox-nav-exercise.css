@@ -29,6 +29,7 @@ nav a{
 }
 nav a:hover{
     color: blue;
+    font-weight: bolder;
 }
 
 /*My Code*/
@@ -41,6 +42,31 @@ nav a:hover{
 nav ul li:nth-child(5){
     margin: auto;
 }
+footer {
+    margin-top: 600px;
+    display: flex;
+    justify-content: space-between;
+}
+footer ul{
+    list-style: none;
+    padding: 0;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+footer p{
+    float: left;
+}
+footer a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Work Sans', sans-serif;
+    /*display: inline-block;*/
+    padding: 1em;
+}
+footer a:hover{
+    color: blue;
+}
+
 /*David's Code*/
 /*#logo>a{*/
 /*    font-family: 'Montserrat', sans-serif;*/
@@ -54,3 +80,4 @@ nav ul li:nth-child(5){
 /*#logo{*/
 /*    margin: auto;*/
 /*}*/
+
