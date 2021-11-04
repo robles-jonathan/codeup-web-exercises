@@ -5,6 +5,8 @@
 }
 body{
     margin: 0;
+    /*David's Code*/
+    /*padding:0;*/
 }
 nav{
     background: #969696;
@@ -14,6 +16,9 @@ ul{
     padding: 0;
     margin: 0;
     display: flex;
+    /*David's Code*/
+    /*justify-content: space-between;*/
+    /*align-items: center;*/
 }
 nav a{
     text-decoration: none;
@@ -26,6 +31,8 @@ nav a:hover{
     color: blue;
     font-weight: bolder;
 }
+
+/*My Code*/
 #logo{
     font-family: 'Montserrat', sans-serif;
     font-size: 3em;
@@ -35,7 +42,6 @@ nav a:hover{
 nav ul li:nth-child(5){
     margin: auto;
 }
-
 footer {
     margin-top: 600px;
     display: flex;
@@ -60,3 +66,18 @@ footer a{
 footer a:hover{
     color: blue;
 }
+
+/*David's Code*/
+/*#logo>a{*/
+/*    font-family: 'Montserrat', sans-serif;*/
+/*    font-size: 3em;*/
+/*    padding: 0 .2em;*/
+/*    position: absolute;*/
+/*    top: -5px;*/
+/*    left: calc(50% - 82.219px);*/
+
+/*}*/
+/*#logo{*/
+/*    margin: auto;*/
+/*}*/
+
