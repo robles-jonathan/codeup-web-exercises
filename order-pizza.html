@@ -136,6 +136,62 @@
                 </div>
             </div>
         </div>
+
+        <div class="card">
+            <div class="card mb-3">
+                <!--                CARD HEADER -->
+                <div class="card-header bg-primary">Choose Cheese and Sauce</div>
+                <!--                CARD INSIDE A CARD -->
+                <div class="card-body">
+                    <div class="card mb-3">
+                        <div class="card-header">Cheese</div>
+                        <div class="card-body">
+<!--                            INSERT select HERE-->
+                            <label for="cheese-amount">How Much?</label>
+                            <select name="cheese-amount" id="cheese-amount" class="form-control">
+                                <option value="light">Light</option>
+                                <option value="normal">Normal</option>
+                                <option value="extra">Extra</option>
+                                <option value="double">Double</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--                    SECOND CARD IN SIDE FIRST PANE -->
+                    <div class="card mb-3">
+                        <div class="card-header">Sauce</div>
+                        <div class="card-body">
+<!--                            INSERT select HERE-->
+                            <label for="sauce-type">What Type?</label>
+                            <select name="sauce-type" id="sauce-type" class="form-control">
+                                <option value="tomato-sauce">Tomato sauce</option>
+                                <option value="marinara-sauce">Marinara sauce</option>
+                                <option value="bbq-sauce">BBQ sauce</option>
+                                <option value="alfredo-sauce">Alfredo Sauce</option>
+                            </select>
+                        </div>
+                        <hr>
+                        <div class="card-body">
+<!--                            INSERT select HERE-->
+                            <label for="sauce-amount">How Much?</label>
+                            <select name="sauce-amount" id="sauce-amount" class="form-control">
+                                <option value="light">Light</option>
+                                <option value="normal">Normal</option>
+                                <option value="extra">Extra</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--                    Card Footer Aligned to the right -->
+                    <div class="card-footer text-right">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-primary">< Previous Step</button>
+                            <button type="button" class="btn btn-primary">Next Step ></button>
+                        </div>
+<!--                        <button class="btn btn-primary">Next Step ></button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </main>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
