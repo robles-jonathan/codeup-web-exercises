@@ -1,16 +1,17 @@
 "use strict";
-(function(){
+(function () {
     // WARM-UP FOR  10-13-21
 // Write a function that returns the number 7.
-    function returnSeven(){
+    function returnSeven() {
         return 7;
     }
+
     console.log(returnSeven());
 
 // Write an if statement with a condition set to the boolean false.
 // Does it run?
 
-    if (true){
+    if (true) {
         console.log("Am I seen?");
     }
 
@@ -31,9 +32,9 @@
     // typeCheck(4 + '4');
 
     function typeCheck(input) {
-        if (typeof input === 'string'){
+        if (typeof input === 'string') {
             return "Haha, it's a string of string!";
-        }else{
+        } else {
             return typeof input;
         }
     }
@@ -45,14 +46,14 @@
 
 
     console.log("Morning Warmup \"FizzBuzz\"");
-    for(var i = 1; i <= 100; i++){
-        if(i % 3 === 0 && i % 5 === 0){
+    for (var i = 1; i <= 100; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
             console.log("FizzBuzz");
-        }else if(i % 3 === 0){
+        } else if (i % 3 === 0) {
             console.log("Fizz")
-        }else if(i % 5 === 0){
+        } else if (i % 5 === 0) {
             console.log("Buzz")
-        }else {
+        } else {
             console.log(i);
         }
     }
@@ -60,7 +61,7 @@
     //Warmup: Create a function named secondToLast that accepts an array as an argument and will return the second to last element of the array.
 
     function secondToLast(array) {
-        return array[array.length-2]
+        return array[array.length - 2]
     }
 
     console.log(secondToLast(["first", "second", "second to last", "last"]))
@@ -73,14 +74,15 @@
 // Example:
 // moveToEnd([1, 2, 3, 4]) 		  // returns [2, 3, 4, 1];
 // moveToEnd([‘roll’, ‘rock’, ‘and’]  // returns [‘rock’, ‘and’, ‘roll’];
-function moveToEnd(array){
+function moveToEnd(array) {
     var removedElement = array.shift();
     array.push(removedElement);
     console.log(array);
     return array;
 }
-moveToEnd([1,2,3,4]);
-moveToEnd(["rock","and","roll"]);
+
+moveToEnd([1, 2, 3, 4]);
+moveToEnd(["rock", "and", "roll"]);
 
 
 var slowbro = {
@@ -94,7 +96,7 @@ var slowbro = {
     description: "Slowpoke became Slowbro when a Shellder bit on to its tail. Sweet flavors seeping from the tail make the Shellder feel as if its life is a dream.",
     category: "Hermit Crab",
     abilities: ["Oblivious", "Own Tempo"],
-    type:["Water", "Psychic"],
+    type: ["Water", "Psychic"],
     weaknesses: ["Ghost", "Dark", "Grass", "Electric", "Bug"]
 }
 console.log(slowbro);
@@ -120,20 +122,21 @@ var wrestlers = [
     }
 ];
 
-function getCanadianWrestlers(array){
+function getCanadianWrestlers(array) {
     var canadianWrestlers = [];
-    for (var i = 0;i < array.length; i++){
-        if (array[i].nationality === "Canadian"){
+    for (var i = 0; i < array.length; i++) {
+        if (array[i].nationality === "Canadian") {
             canadianWrestlers.push(array[i]);
         }
     }
     return canadianWrestlers;
 }
+
 //Alternate using forEach loop
-function filterForCanadians(arr){
+function filterForCanadians(arr) {
     var bucket = [];
-    arr.forEach(function(element){
-        if (element.nationality === "Canadian"){
+    arr.forEach(function (element) {
+        if (element.nationality === "Canadian") {
             bucket.push(element);
         }
     });
@@ -153,10 +156,10 @@ var circle = {
 
 
 // hint: area = pi * radius^2
-var areaOfCircle = function(){
-    return Math.round(Math.PI*Math.pow(circle.radius,2));
+var areaOfCircle = function () {
+    return Math.round(Math.PI * Math.pow(circle.radius, 2));
 }
-console.log("The area of the circle rounded to the nearest whole number is: "+ areaOfCircle())
+console.log("The area of the circle rounded to the nearest whole number is: " + areaOfCircle())
 
 
 // WARM-UP 11-02-21
@@ -167,29 +170,29 @@ var groceries = [
     {
         name: "carrots",
         quantity: 5
-    },{
+    }, {
         name: "yams",
         quantity: 50
-    },{
+    }, {
         name: "oranges",
         quantity: 9
-    },{
+    }, {
         name: "onions",
         quantity: 2
-    },{
+    }, {
         name: "cucumbers",
         quantity: 6
-    },{
+    }, {
         name: "potatoes",
         quantity: 8
     }
 ];
 
 // MY SOLUTION NEEDS WORK
-function highestQuantity(arr){
+function highestQuantity(arr) {
     var highest = 0;
 
-    for (var i = 0; i < arr.length; i++){
+    for (var i = 0; i < arr.length; i++) {
         var name = arr[i].name;
         if (arr[i].quantity > highest) {
             highest = arr[i].quantity;
@@ -202,13 +205,13 @@ console.log(highestQuantity(groceries))
 
 
 //David's solution
-function getHighestQuantityObject(arr){
+function getHighestQuantityObject(arr) {
     var obj = {
         name: "something",
         quantity: 0
     }
-    arr.forEach(function(element){
-        if(element.quantity > obj.quantity){
+    arr.forEach(function (element) {
+        if (element.quantity > obj.quantity) {
             obj = element;
         }
         // console.log(obj);
@@ -240,18 +243,80 @@ var products = [
         price: 5.99
     }]
 
-function sortByName(array){
-    return array.sort(function(a,b) {
+function sortByName(array) {
+    return array.sort(function (a, b) {
         var aLower = a.name.toLowerCase();
         var bLower = b.name.toLowerCase();
-        if (aLower < bLower){
+        if (aLower < bLower) {
             return -1;
-        } else if (aLower > bLower){
+        } else if (aLower > bLower) {
             return 1;
-        }else {
+        } else {
             return 0;
         }
     });
 }
 
 console.log(sortByName(products));
+
+// Morning Warmup:
+//     Write a function in JavaScript that takes in an array of objects and returns the object with the lowest height property.
+//     Consider the following array to test your code.
+
+var bBallPlayers = [
+    {
+        name: "Hakeem Olajuwon",
+        height: 213
+    }, {
+        name: "Muggsy Bogues",
+        height: 160
+    }, {
+        name: "Chris Paul",
+        height: 183
+    }, {
+        name: "Bol Bol",
+        height: 218
+    }, {
+        name: "Moochie Norris",
+        height: 185
+    }, {
+        name: "Manu Ginobili",
+        height: 198
+    }
+];
+
+function lowestHeight(arr) {
+    var obj = {
+        name: "string",
+        height: 0
+    };
+    arr.forEach(function (element) {
+        if (element.height > obj.height) {
+            obj = element;
+        }
+        // console.log(obj);
+    });
+    arr.forEach(function (element) {
+        if (element.height < obj.height) {
+            obj = element;
+        }
+        // console.log(obj);
+    })
+
+    return obj;
+}
+
+console.log(lowestHeight(bBallPlayers));
+
+//DAVID'S Solution
+function findShortest(arr){
+    var holdthis={height: Number.MAX_VALUE}
+    arr.forEach(function (el) {
+        if(el.height < holdthis.height){
+            holdthis = el;
+        }
+    });
+    return holdthis;
+}
+
+console.log(findShortest(bBallPlayers));
