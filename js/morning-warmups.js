@@ -336,7 +336,6 @@ var myCharacter = {
     class: 'Warrior',
     abilities: {
         attack: function (obj) {
-            // console.log(damage);
             return enemy.hitPoints - obj.weapon.damage;
         },
     },
@@ -358,4 +357,36 @@ var enemy = {
 console.log(myCharacter.abilities.attack(myCharacter));
 
 // JAY'S SOLUTION
+
+var myCharacter1 = {
+    name: 'Johnny Boy',
+    hitPoints: 100,
+    class: 'Warrior',
+    abilities: {
+        attack: function (obj) {
+            console.log(myCharacter1.name + " hit " + obj.name + " for " + myCharacter1.weapon.damage + " damage!");
+            obj.hitPoints -= myCharacter1.weapon.damage;
+            console.log(obj.name + " has " + obj.hitPoints + " hit points left!");
+        },
+    },
+    magicPoints: 0,
+    weapon: {
+        name: 'Silver Sabre',
+        damage: 16,
+        type: 'sword'
+    }
+}
+
+var enemy1 = {
+    name: 'Savage Orc',
+    hitPoints: 100,
+    class: 'Warrior',
+    magicPoints: 0,
+}
+myCharacter1.abilities.attack(enemy1);
+myCharacter1.abilities.attack(enemy1);
+myCharacter1.abilities.attack(enemy1);
+myCharacter1.abilities.attack(enemy1);
+myCharacter1.abilities.attack(enemy1);
+myCharacter1.abilities.attack(enemy1);
 
