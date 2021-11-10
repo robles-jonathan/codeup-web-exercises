@@ -285,6 +285,8 @@ var bBallPlayers = [
     }
 ];
 
+
+// WARMUP 11/09/21
 function lowestHeight(arr) {
     var obj = {
         name: "string",
@@ -309,10 +311,10 @@ function lowestHeight(arr) {
 console.log(lowestHeight(bBallPlayers));
 
 //DAVID'S Solution
-function findShortest(arr){
-    var holdthis={height: Number.MAX_VALUE}
+function findShortest(arr) {
+    var holdthis = {height: Number.MAX_VALUE}
     arr.forEach(function (el) {
-        if(el.height < holdthis.height){
+        if (el.height < holdthis.height) {
             holdthis = el;
         }
     });
@@ -320,3 +322,71 @@ function findShortest(arr){
 }
 
 console.log(findShortest(bBallPlayers));
+
+// WARMUP 11/10/21
+//
+// Name your character object, and complete the attack method.
+// The attack method should use the myCharacter weapon object to deal damage to the enemy objects hit points.
+// When the attack method has been executed, the hit points of the enemy object should reflect the damage done in the console.
+
+// MY SOLUTION
+var myCharacter = {
+    name: 'Johnny Boy',
+    hitPoints: 100,
+    class: 'Warrior',
+    abilities: {
+        attack: function (obj) {
+            return enemy.hitPoints - obj.weapon.damage;
+        },
+    },
+    magicPoints: 0,
+    weapon: {
+        name: 'Silver Sabre',
+        damage: 16,
+        type: 'sword'
+    }
+}
+
+var enemy = {
+    name: 'Savage Orc',
+    hitPoints: 100,
+    class: 'Warrior',
+    magicPoints: 0,
+}
+
+console.log(myCharacter.abilities.attack(myCharacter));
+
+// JAY'S SOLUTION
+
+var myCharacter1 = {
+    name: 'Johnny Boy',
+    hitPoints: 100,
+    class: 'Warrior',
+    abilities: {
+        attack: function (obj) {
+            console.log(myCharacter1.name + " hit " + obj.name + " for " + myCharacter1.weapon.damage + " damage!");
+            obj.hitPoints -= myCharacter1.weapon.damage;
+            console.log(obj.name + " has " + obj.hitPoints + " hit points left!");
+        },
+    },
+    magicPoints: 0,
+    weapon: {
+        name: 'Silver Sabre',
+        damage: 16,
+        type: 'sword'
+    }
+}
+
+var enemy1 = {
+    name: 'Savage Orc',
+    hitPoints: 100,
+    class: 'Warrior',
+    magicPoints: 0,
+}
+myCharacter1.abilities.attack(enemy1);
+myCharacter1.abilities.attack(enemy1);
+myCharacter1.abilities.attack(enemy1);
+myCharacter1.abilities.attack(enemy1);
+myCharacter1.abilities.attack(enemy1);
+myCharacter1.abilities.attack(enemy1);
+
