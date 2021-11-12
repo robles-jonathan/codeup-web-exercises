@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM</title>
+</head>
+<body>
+<h1>BOM Lecture</h1>
+<div>
+    <p id="userEmail"></p>
+</div>
+<script>
+    // setTimeout(function () {
+    //     alert('Hello!')
+    // }, 3000)
+    //
+    // setTimeout(function () {
+    //     document.getElementById("userEmail").innerHTML = prompt("Give us your email address");
+    // }, 5000)
+
+    // var intervalID = setInterval(function () {
+    //     console.log(intervalID)
+    //     var canGoToMtSplashmore = confirm ("Will you take us to MT.Splashmore?");
+    //     if (canGoToMtSplashmore){
+    //         document.getElementById("userEmail").innerHTML = "Yes!! We Can Go!!!"
+    //         clearInterval(intervalID);
+    //     }
+    // }, 4000);
+
+    var intervalID = window.setInterval(function () {
+        console.log(intervalID)
+        var stillThere = confirm ("FROST BANK ALERT!! \nYou have been idle for too long. Have you considered logging out? Click OK to continue Banking.");
+        if (!stillThere){
+            clearInterval(intervalID);
+            // window.location = "https://google.com" // opens google in same window
+            window.open("https://google.com", "_newtab=true"); // opens google in a new tab
+        }
+    }, 4000);
+
+</script>
+
+</body>
+</html>
