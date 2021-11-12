@@ -390,3 +390,19 @@ myCharacter1.abilities.attack(enemy1);
 myCharacter1.abilities.attack(enemy1);
 myCharacter1.abilities.attack(enemy1);
 
+// WARM-UP 11/12/21
+//Write a function in JavaScript that takes in an array, and returns a random element from the array.
+//
+// Ex. randomEl([“rock”, “paper”, “scissors”, “lizard”, “Spock”]) // returns an element from the array.
+function randomEl(arr) {
+    let randomIndex = Math.floor(Math.random()*arr.length);
+    return arr[randomIndex];
+    }
+console.log(randomEl(["rock", "paper", "scissors", "lizard", "spock"]))
+
+/// DAVIDS  SOLUTION
+function randomElements(arr){
+    return arr[Math.floor(Math.random()*arr.length)]
+}
+
+console.log(randomElements(["rock", "paper", "scissors", "lizard", "Spock"]))
