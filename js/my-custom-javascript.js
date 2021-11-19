@@ -18,12 +18,24 @@ $(document).ready(function() {
     // alert('The content of ID li is : ' + idOfLi);
 
     //Class Selectors
-    $('.codeup').css('border','1px solid red');
+    // $('.codeup').css('border','1px solid red');
     //Give another element an id of codeup. Does this element get a border now?
     // No that element does that get a border.
 
     //Element Selectors
 
+    $('li').css('font-size','20px');
+
+    var h1Highlight = $('h1').css('background-color', 'yellowgreen');
+    var pHightlight = $('p').css('background-color', 'yellowgreen');
+    var liHighlight = $('li').css('background-color', 'yellowgreen');
+    var h1Contents = h1Highlight.html();
+
+    alert(h1Contents);
+
+    //Mulitple Selectors
+
+    // $('h1, p,li').css('background-color', 'green');
 })
 
 //Exercises
