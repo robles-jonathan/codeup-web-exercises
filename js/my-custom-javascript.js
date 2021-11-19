@@ -30,9 +30,7 @@ $(document).ready(function() {
     // $('p').css('background-color', 'yellowgreen');
     // $('li').css('background-color', 'yellowgreen');
     // var h1Contents = $('h1').html();
-    //
     // alert(h1Contents);
-
     //Multiple Selectors
 
     // $('h1, p,li').css('background-color', 'green');
