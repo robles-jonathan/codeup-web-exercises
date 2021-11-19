@@ -26,16 +26,16 @@ $(document).ready(function() {
 
     // $('li').css('font-size','20px');
     //
-    // var h1Highlight = $('h1').css('background-color', 'yellowgreen');
-    // var pHightlight = $('p').css('background-color', 'yellowgreen');
-    // var liHighlight = $('li').css('background-color', 'yellowgreen');
-    // var h1Contents = h1Highlight.html();
+    // $('h1').css('background-color', 'yellowgreen');
+    // $('p').css('background-color', 'yellowgreen');
+    // $('li').css('background-color', 'yellowgreen');
+    // var h1Contents = $('h1').html();
     //
     // alert(h1Contents);
 
-    //Mulitple Selectors
+    //Multiple Selectors
 
-    $('h1, p,li').css('background-color', 'green');
+    // $('h1, p,li').css('background-color', 'green');
 })
 
 //Exercises
