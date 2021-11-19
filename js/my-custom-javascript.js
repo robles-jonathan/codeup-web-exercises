@@ -5,20 +5,20 @@ $(document).ready(function() {
 
     // Id Selectors
 
-    var idContents = $('#para1').html();
-    alert('The content of ID para1 is : ' + idContents);
-
-    var liFourContents = $('#liFour').html();
-    alert('The content of ID liFour is : ' + liFourContents);
-
-    //Use the same id on 2 elements. How does this change the jQuery selection?
-    //Will only select the first ID not the second.
-
-    var idOfLi = $('#li').html();
-    alert('The content of ID li is : ' + idOfLi);
+    // var idContents = $('#para1').html();
+    // alert('The content of ID para1 is : ' + idContents);
+    //
+    // var liFourContents = $('#liFour').html();
+    // alert('The content of ID liFour is : ' + liFourContents);
+    //
+    // //Use the same id on 2 elements. How does this change the jQuery selection?
+    // //Will only select the first ID not the second.
+    //
+    // var idOfLi = $('#li').html();
+    // alert('The content of ID li is : ' + idOfLi);
 
     //Class Selectors
-    // $('.codeup').css('border','1px solid red');
+    $('.codeup').css('border','1px solid red');
     //Give another element an id of codeup. Does this element get a border now?
     // No that element does that get a border.
 
