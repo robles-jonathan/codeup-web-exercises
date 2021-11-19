@@ -24,18 +24,18 @@ $(document).ready(function() {
 
     //Element Selectors
 
-    $('li').css('font-size','20px');
-
-    var h1Highlight = $('h1').css('background-color', 'yellowgreen');
-    var pHightlight = $('p').css('background-color', 'yellowgreen');
-    var liHighlight = $('li').css('background-color', 'yellowgreen');
-    var h1Contents = h1Highlight.html();
-
-    alert(h1Contents);
+    // $('li').css('font-size','20px');
+    //
+    // var h1Highlight = $('h1').css('background-color', 'yellowgreen');
+    // var pHightlight = $('p').css('background-color', 'yellowgreen');
+    // var liHighlight = $('li').css('background-color', 'yellowgreen');
+    // var h1Contents = h1Highlight.html();
+    //
+    // alert(h1Contents);
 
     //Mulitple Selectors
 
-    // $('h1, p,li').css('background-color', 'green');
+    $('h1, p,li').css('background-color', 'green');
 })
 
 //Exercises
