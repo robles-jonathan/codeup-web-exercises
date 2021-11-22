@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="css/login.css">
+    <style>
+        #error-message {
+            display: none;
+            color: red
+        }
+    </style>
 </head>
 <body>
 <main>
@@ -16,10 +22,48 @@
             <div class="form-group">
                 <label for="password" class="form-label">Password</label>
                 <input type="password" id="password" name="password" class="form-control">
+                <small id="error-message">We’re sorry, your username or password is incorrect. Please try again.</small>
             </div>
-            <button class="btn btn-block">Login</button>
+            <button id="btn-submit" class="btn btn-block">Login</button>
         </fieldset>
     </form>
 </main>
+<!--VANILLA JS-->
+<!--<script>-->
+<!--    var submitButton = document.querySelector('#btn-submit');-->
+<!--    var errorMessage = document.querySelector('#error-message');-->
+
+<!--    var username = "regulus2021";-->
+<!--    var password = "gocodeup";-->
+<!--    var usernameInput = document.querySelector('#username');-->
+<!--    var passwordInput = document.querySelector('#password');-->
+
+<!--    submitButton.addEventListener('click', function(e){-->
+<!--        e.preventDefault(); // WILL PREVENT FROM BEING RELOADED-->
+<!--        if(usernameInput.value !== username || passwordInput.value !== password){-->
+<!--            errorMessage.style.display = 'inline-block';-->
+<!--        }-->
+<!--    })-->
+<!--</script>-->
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<!--JQUERY SOLUTION-->
+<script>
+
+    'use strict';
+    var username = "regulus2021"
+    var password = "gocodeup"
+    var errorMessage = $('#error-message');
+    var submitBtn = $('#btn-submit');
+    var usernameInput = $('#username');
+    var passwordInput = $('#password');
+
+    submitBtn.click(function(e){
+        e.preventDefault();
+        if(usernameInput.val() !== username || passwordInput.val() !== password){
+            errorMessage.css('display', 'inline-block');
+        }
+    })
+</script>
 </body>
 </html>

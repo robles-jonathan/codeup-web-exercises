@@ -406,3 +406,15 @@ function randomElements(arr){
 }
 
 console.log(randomElements(["rock", "paper", "scissors", "lizard", "Spock"]))
+
+
+// WARM-UP 11/22/2012
+//You are in charge of adding form validation for the login page for a contract position. Navigate to your login-form.html file in codeup-web-exercises, write your code in an inline script.
+//
+// Below is the username and password we would like you to test with.
+//
+// Var username = “regulus2021”
+// Var password = “gocodeup”
+//
+//
+// If the user enters in the wrong username or password, add a small text element under the password input field that reads “We’re sorry, your username or password is incorrect. Please try again.” This string should be red.
