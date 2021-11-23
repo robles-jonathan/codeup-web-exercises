@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Konami Code</title>
+    <script src="https://kit.fontawesome.com/2f6b90b1d3.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<nav style="display: flex; flex-direction: row-reverse;">
+    <ul id="code" style="list-style-type: none;">
+<!--        <li id="up"><i class="fas fa-arrow-circle-up"></i></li>-->
+<!--        <li id="down"><i class="fas fa-arrow-circle-down"></i></li>-->
+<!--        <li id="left"><i class="fas fa-arrow-circle-left"></i></li>-->
+<!--        <li id="right"><i class="fas fa-arrow-circle-right"></i></li>-->
+<!--        <li id="b"><img src="assets/letter-b.png" alt="" height="16px" width="16px"></li>-->
+<!--        <li id="a"><img src="assets/letter-a.png" alt="" height="16px" width="16px"></li>-->
+<!--        <li id="enter"><img src="assets/start.png" alt="" height="16px" width="16px"></li>-->
+    </ul>
+</nav>
 <h1 style="text-align:center">Konami Code</h1>
 <div id="emu" style="opacity: 0;"></div>
 <div class="music" style="display:none;"></div>
-
 
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script><script>
@@ -28,9 +39,16 @@
                 '    <source src="assets/title.mp3" type="audio/mpeg">\n' +
                 '    Your browser does not support the audio element.\n' +
                 '</audio>\n')
-
         }
     });
+
+    // trying to get code buttons to show up
+    // $(document).keyup(function (e){
+    //     if(e.keyCode === 38){
+    //         let html =''
+    //         $('#code').html( html +='<li id="up"><i class="fas fa-arrow-circle-up"></i></li>')
+    //     }
+    // })
 </script>
 
 <script>
