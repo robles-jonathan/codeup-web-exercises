@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Picture Swapper</title>
+    <style>
+        .container {
+            margin: 40px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .frame{
+            height: 500px;
+            width: 400px;
+            border: 10px solid grey;
+        }
+        .centerBtn{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        #frame1{
+            background-image: url(img/painting1.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #frame2{
+            background-image: url(img/paintin2.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #frame3{
+            background-image: url(img/painting3.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class ="sm-container">
+        <div class="frame" id="frame1">
+        </div>
+        <button class="centerBtn"> Swap > </button>
+    </div>
+    <div class ="sm-container">
+        <div class="frame" id="frame2">
+        </div>
+        <button class="centerBtn"> < Swap > </button>
+    </div>
+    <div class ="sm-container">
+        <div class="frame" id="frame3">
+        </div>
+        <button class="centerBtn"> < Swap </button>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script src ="js.jquery-picture-swapper.js"></script>
+</body>
+</html>
