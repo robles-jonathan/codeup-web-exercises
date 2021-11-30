@@ -2,35 +2,111 @@
 <html>
 <head>
     <title>Online Store</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        thead {
+            background-color: #3f87a6;
+            color: #fff;
+        }
+
+        tbody {
+            background-color: #e4f0f5;
+        }
+
+        table {
+            border-collapse: collapse;
+            border: 2px solid rgb(200, 200, 200);
+            letter-spacing: 1px;
+            font-family: sans-serif;
+            font-size: .8rem;
+        }
+
+        td,
+        th {
+            border: 1px solid rgb(190, 190, 190);
+            padding: 5px 10px;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #refresh {
+            margin-top: 10px;
+        }
+
+    </style>
 </head>
 <body>
 
 <h1>My Tool Store</h1>
+<div class="container">
+    <div class="sm-container">
+        <table id="products">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Categories</th>
+            </tr>
+            </thead>
+            <tbody id="insertProducts"></tbody>
+        </table>
+        <button type="button" id="refresh">Refresh</button>
+    </div>
+</div>
 
-<table id="products">
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Categories</th>
-        </tr>
-    </thead>
-    <tbody id="insertProducts"></tbody>
-</table>
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
 <script>
-(function() {
-    "use strict";
-    // TODO: Create an AJAX GET request for the file under data/inventory.json
+    (function () {
+        "use strict";
 
-    // TODO: Take the data from inventory.json and append it to the products table
-    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-    //             its contents and fields
-    //       HINT: You will want to target #insertProducts for your new HTML elements
-})();
+        // TODO: Create an AJAX GET request for the file under data/inventory.json
+        function loadProducts() {
+            $.get("/data/inventory.json").done(function (products) {
+                $("#insertProducts").html("");
+                products.forEach(function (product) {
+                    var tr =
+                        "<tr>" +
+                        "<td>" + product.title + "</td>" +
+                        "<td>" + product.quantity + "</td>" +
+                        "<td>" + product.price + "</td>" +
+                        "<td>" + product.categories + "</td>" +
+                        "</tr>";
+                    $("#insertProducts").append(tr);
+                });
+            }).fail(function () {
+                console.log("Request failed!")
+            });
+        }
+
+        // TODO: Take the data from inventory.json and append it to the products table
+        //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+        //             its contents and fields
+        //       HINT: You will want to target #insertProducts for your new HTML elements\
+
+        //Reload Button
+        $('#refresh').click(function () {
+            $("#insertProducts").html("");
+            loadProducts();
+        })
+
+        // On load
+        loadProducts();
+    })();
 </script>
 
 </body>
