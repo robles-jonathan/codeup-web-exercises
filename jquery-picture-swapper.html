@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <title>jQuery Picture Swapper</title>
     <style>
+        h1{
+            text-align: center;
+        }
         .container {
             margin: 40px;
             display: flex;
             flex-direction: row;
             justify-content: space-around;
+        }
+        .sm-container{
+            text-align: center;
         }
         .frame{
             height: 500px;
@@ -16,22 +22,19 @@
             border: 10px solid grey;
         }
         .centerBtn{
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
+            margin: 10px auto;
         }
-        #frame1{
+        .picture1{
             background-image: url(img/painting1.jpeg);
             background-repeat: no-repeat;
             background-size: cover;
         }
-        #frame2{
+        .picture2{
             background-image: url(img/paintin2.jpeg);
             background-repeat: no-repeat;
             background-size: cover;
         }
-        #frame3{
+        .picture3{
             background-image: url(img/painting3.jpeg);
             background-repeat: no-repeat;
             background-size: cover;
@@ -39,21 +42,22 @@
     </style>
 </head>
 <body>
+<h1>jQuery Picture Swapper</h1>
 <div class="container">
     <div class ="sm-container">
-        <div class="frame" id="frame1">
+        <div class="frame picture1">
         </div>
-        <button class="centerBtn"> Swap > </button>
+        <button class="centerBtn" id="btn1"> Swap > </button>
     </div>
     <div class ="sm-container">
-        <div class="frame" id="frame2">
+        <div class="frame picture2">
         </div>
-        <button class="centerBtn"> < Swap > </button>
+        <button class="centerBtn" id="btn2"> < Swap > </button>
     </div>
     <div class ="sm-container">
-        <div class="frame" id="frame3">
+        <div class="frame picture3">
         </div>
-        <button class="centerBtn"> < Swap </button>
+        <button class="centerBtn" id="btn3"> < Swap </button>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
