@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Mapbox Exercise</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+<h1>Fly from SAT International Airport To DFW Airport</h1>
+<div id='map' style='width: 800px; height: 600px;'></div>
+<button id="zoomIn">+</button>
+<button id="zoomOut">-</button>
+<script src="js/keys.js"></script>
+<script>
+    mapboxgl.accessToken = MAPBOX_KEY;
+    const start = [-98.4705371,29.5311973];
+    const end = [-97.0425239, 32.8998091];
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: start, // starting position [lng, lat] //SAT Airport
+        // center: [-97.0425239, 32.8998091], // DFW Airport
+        zoom: 12, // starting zoom
+    });
+
+
+    setTimeout(function(){
+
+        map.flyTo({
+            center: end,
+            zoom: 12,
+            bearing: 0,
+            speed: .5,
+            curve: 1,
+            essential: true
+        });
+        map.setStyle('mapbox://styles/mapbox/satellite-streets-v11')
+    }, 5000)
+
+    document.querySelector("#zoomIn").addEventListener('click',function(){
+        map.setZoom(map.getZoom() + 1);
+        // or
+        // map.zoomIn();
+    })
+    document.querySelector("#zoomOut").addEventListener('click',function(){
+        map.setZoom(map.getZoom() - 1);
+    })
+
+</script>
+</body>
+</html>
