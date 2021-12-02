@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Mapbox Exercise 2</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+<div id='map' style='width: 800px; height: 600px;'></div>
+<button id="zoomIn">+</button>
+<button id="zoomOut">-</button>
+<div>
+    <h1 id="newLngLat"></h1>
+</div>
+<script src="js/keys.js"></script>
+<script>
+    mapboxgl.accessToken = MAPBOX_KEY;
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-74.0060,40.7128],
+        zoom: 12, // starting zoom
+    });
+
+
+    document.querySelector("#zoomIn").addEventListener('click',function(){
+        map.setZoom(map.getZoom() + 1);
+        // or
+        // map.zoomIn();
+    })
+    document.querySelector("#zoomOut").addEventListener('click',function(){
+        map.setZoom(map.getZoom() - 1);
+    })
+
+    // MARKERS
+    //Instantiate a new Marker object.
+
+    var statueOfLiberty = new mapboxgl.Marker({
+        color: 'blue',
+    }).setLngLat([-74.044502,40.689247]).setDraggable(true);
+    statueOfLiberty.addTo(map);
+
+    // fires off a function once marker has been moved on the map
+    statueOfLiberty.on('dragend', function(){
+        console.log(statueOfLiberty.getLngLat());
+        console.log(statueOfLiberty.getLngLat().lng)
+        console.log(statueOfLiberty.getLngLat().lat)
+
+        var lng = statueOfLiberty.getLngLat().lng;
+        var lat = statueOfLiberty.getLngLat().lat;
+        var h1 = ("")
+        document.querySelector("#newLngLat").innerHTML = "<h1> The New Coordinates of the marker are: <br>" + "Long: " + lng + "<br>Lat: " + lat + "</h1>";
+    })
+
+    var statueOfLibertyPopup = new mapboxgl.Popup()
+        .setLngLat(statueOfLiberty.getLngLat())
+        .setHTML('<h1>Statue Of Liberty</h1>')
+        .addTo(map)
+
+</script>
+</body>
+</html>
