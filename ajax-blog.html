@@ -14,6 +14,11 @@
     </style>
 </head>
 <body>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4 text-center" >My Blog Spot</h1>
+    </div>
+</div>
 <div id="posts"></div>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -34,8 +39,6 @@
                 console.log(posts);
                 $('#posts').html("");
                 posts.forEach(function(post){
-                    console.log(post.categories);
-                    console.log(titleCase(post.categories.join(', ')));
                     var load =
                         "<div class='post'>" +
                         "<h5>" + titleCase(post.categories.join(", ")) + "</h5>" +
