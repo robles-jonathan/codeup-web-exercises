@@ -3,12 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <title>MAPBOX - Lecture</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
 <h1>Welcome to Mapbox!</h1>
-
+<div id='map' style='width: 800px; height: 600px;'></div>
 <script src="js/keys.js"></script>
+<script>
+    mapboxgl.accessToken = MAPBOX_KEY;
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-98.4705371,29.5311973], // starting position [lng, lat] //SAT Airport
+        // center: [-97.0425239, 32.8998091], // DFW Airport
+        zoom: 9 // starting zoom
+    });
 
+    // MARKERS
+    //Instantiate a new Marker object.
+
+    var codeup = new mapboxgl.Marker({
+        color: 'blue',
+    }).setLngLat([-98.4615,29.426827]).setDraggable(true);
+
+    codeup.addTo(map);
+
+    // fires off a function once marker has been moved on the map
+    codeup.on('dragend', function(){
+        popup.setLngLat(codeup.getLngLat())
+        console.log(codeup.getLngLat());
+    })
+
+    // How to remove marker
+    // codeup.remove();
+
+    var alamo = new mapboxgl.Marker();
+    alamo.setLngLat([-98.5334885,29.4066423]);
+
+    alamo.addTo(map);
+
+
+    //POP-UPS
+    var popup = new mapboxgl.Popup()
+        .setLngLat(codeup.getLngLat())
+        // .setHTML('<img src ="img/slowbro.png">')
+        .addTo(map)
+
+</script>
 
 </body>
 </html>
