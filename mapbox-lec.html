@@ -10,6 +10,7 @@
 <h1>Welcome to Mapbox!</h1>
 <div id='map' style='width: 800px; height: 600px;'></div>
 <script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
 <script>
     mapboxgl.accessToken = MAPBOX_KEY;
     const map = new mapboxgl.Map({
@@ -49,6 +50,22 @@
         .setLngLat(codeup.getLngLat())
         // .setHTML('<img src ="img/slowbro.png">')
         .addTo(map)
+
+
+    var mysteryPlace = new mapboxgl.Marker();
+    var newPlace = new mapboxgl.Marker();
+
+    reverseGeocode({lat: 32.77, lng: -96.79}, MAPBOX_KEY).then(function(results){
+        var res = results.features[0].center;
+        newPlace.setLngLat([res[0],res[1]]);
+        newPlace.addTo(map);
+    })
+
+    geocode("lytle, TX, United States", MAPBOX_KEY).then(function (results) {
+        console.log(results)
+        mysteryPlace.setLngLat([results[0],results[1]]);
+        mysteryPlace.addTo(map);
+    })
 
 </script>
 
