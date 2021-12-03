@@ -1,7 +1,18 @@
 "use strict";
-$(document).ready(function() {
+$(document).ready(function () {
     // alert( 'The DOM has finished loading!' );
+    // document.getElementById("clickme").addEventListener('click',function(){
+    //     document.getElementById('user_display').innerHTML = document.getElementById("user_input").value;
+    // },false);
+    //
+    $('#clickme').click(function () {
+        $('#user_display').html($('#user_input').val());
+    })
 
+
+    $("input").keypress(function () {
+        console.log(1)
+    });
 
     // Id Selectors
     var mainTitle = $('#main-title').html('Changed the MAIN TITLE!!')
@@ -37,22 +48,34 @@ $(document).ready(function() {
 
 
     //MOUSE EVENTS
-    mainTitle.click(function(){
-        $(this).css('background','cadetblue');
+    mainTitle.click(function () {
+        $(this).css('background', 'cadetblue');
     });
 
     var paragraphs = $('p');
-    paragraphs.dblclick(function(){
-        $(this).css('font-size','18px');
+    paragraphs.dblclick(function () {
+        $(this).css('font-size', '18px');
     });
 
     var li = $('li');
-    li.hover(function (){
+    li.hover(function () {
         $(this).css('color', 'red');
-    }, function (){
+    }, function () {
         $(this).css('color', 'black');
     });
 });
+
+
+$('.class1, .class2').css('color', 'red');
+
+$('#fancyB').hover(
+    function () {
+        $(this).css('background-color', 'papayawhip');
+    },
+    function () {
+        $(this).css('background-color', '#FFF');
+    }
+);
 
 //Remove your custom jQuery code from previous exercises.
 //
