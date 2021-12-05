@@ -10,11 +10,24 @@ $(document).ready(function () {
         logoPosition: 'top-left'
     });
 
+    function reveresSearch(lng, lat){
+        reverseGeocode({lng, lat}, MAPBOX_KEY).then(function(results) {
+            // logs the address for The Alamo
+            $("#city").empty();
+            var split = results.split(",");
+            var city = split[1];
+            console.log(city);
+            console.log(results);
+            $('#city').append(city)
+        });
+    }
+
+
     createPin();//INITIALIZE createPin() FUNCTION
     movePinToLocation();
     map.addControl(new mapboxgl.NavigationControl());//ADDS NAVIGATION CONTROLS
 
-    //CREATE MARKER FOR createPin()
+    //CREATE MARKER to be manipulated throughout the code
     const marker = new mapboxgl.Marker({
         draggable: true
     })
@@ -23,10 +36,10 @@ $(document).ready(function () {
         map.on('click', (e) => {
             var lat = e.lngLat.lat;
             var lon = e.lngLat.lng;
-            marker
-                .setLngLat(e.lngLat)
-                .addTo(map);
+            marker.setLngLat(e.lngLat).addTo(map);
+            map.setCenter([lon,lat]);
             getWeatherInfo(lat, lon);
+            reveresSearch(lon, lat)
         });
     }
 
@@ -38,9 +51,10 @@ $(document).ready(function () {
                 var lat = results[1];
                 var lon = results[0];
                 console.log("lat: " + lat + " \n lon: " + lon)
-                new mapboxgl.Marker().setLngLat([results[0],results[1]]).addTo(map);
+                marker.setLngLat([results[0],results[1]]).addTo(map);
                 map.setCenter([results[0],results[1]]);
                 getWeatherInfo(lat,lon);
+                reveresSearch(lon, lat);
             })
         })
     }
