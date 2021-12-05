@@ -5,14 +5,60 @@ $(document).ready(function () {
     const map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: [-98.4705371, 29.5311973], // starting position [lng, lat] //SAT Airport
-        // center: [-97.0425239, 32.8998091], // DFW Airport
-        zoom: 10 // starting zoom
+        center: [-98.4705371, 29.5311973],
+        zoom: 10, // starting zoom
+        logoPosition: 'top-left'
     });
+
+    createPin();//INITIALIZE createPin() FUNCTION
+    movePinToLocation();
+    map.addControl(new mapboxgl.NavigationControl());//ADDS NAVIGATION CONTROLS
+
+    //CREATE MARKER FOR createPin()
+    const marker = new mapboxgl.Marker({
+        draggable: true
+    })
+
+    function createPin(){
+        map.on('click', (e) => {
+            var lat = e.lngLat.lat;
+            var lon = e.lngLat.lng;
+            marker
+                .setLngLat(e.lngLat)
+                .addTo(map);
+            getWeatherInfo(lat, lon);
+        });
+    }
+
+    function movePinToLocation(){
+        // Centers Map to Address entered by user
+        $('#submit-address').click(function(){
+            var address = $('#address').val();
+            geocode(address, MAPBOX_KEY).then(function (results) {
+                var lat = results[1];
+                var lon = results[0];
+                console.log("lat: " + lat + " \n lon: " + lon)
+                new mapboxgl.Marker().setLngLat([results[0],results[1]]).addTo(map);
+                map.setCenter([results[0],results[1]]);
+                getWeatherInfo(lat,lon);
+            })
+        })
+    }
+
+
+    //DISPLAYS LngLat when marker has stopped dragging inside map
+    // function onDragEnd() {
+    //     const lngLat = marker.getLngLat();
+    //     coordinates.style.display = 'block';
+    //     coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+    // }
+    // marker.on('dragend', onDragEnd);
+
 
     getWeatherInfo(29.5311973, -98.4705371)
 
     function getWeatherInfo(lat, lon) {
+        $("#card").empty();
         $.get("https://api.openweathermap.org/data/2.5/onecall", {
             lat: lat,
             lon: lon,
