@@ -80,6 +80,7 @@ $(document).ready(function () {
 
     function getWeatherInfo(lat, lon) {
         $("#card").empty();
+        $('#current-temp').empty();
         $.get("https://api.openweathermap.org/data/2.5/onecall", {
             lat: lat,
             lon: lon,
@@ -88,7 +89,12 @@ $(document).ready(function () {
             appid: OPEN_WEATHER_KEY
         }).done(function (data) {
 
+            console.log(data)
             var dailyArray = data.daily.slice(0,5);
+            console.log(dailyArray)
+            var currentDegrees = data.current.temp
+            console.log(currentDegrees)
+            $('#current-temp').append("Current Temp: " + currentDegrees + "&deg;F")
 
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ForEACH~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
             dailyArray.forEach((element, index, array) => {
