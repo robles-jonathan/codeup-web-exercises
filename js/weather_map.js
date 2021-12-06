@@ -12,13 +12,10 @@ $(document).ready(function () {
 
     function reveresSearch(lng, lat){
         reverseGeocode({lng, lat}, MAPBOX_KEY).then(function(results) {
-            // logs the address for The Alamo
             $("#city").empty();
             var split = results.split(",");
             var city = split[1];
-            console.log(city);
-            console.log(results);
-            $('#city').append(city)
+            $('#city').append("Current City: " + city)
         });
     }
 
