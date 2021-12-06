@@ -9,11 +9,14 @@
     <link rel="stylesheet" href="css/weather_map.css">
 </head>
 <body>
-<label>
-    Where would like to go?
-    <input id="address" type="text">
-</label>
-<button id="submit-address">Submit</button>
+<div class="addressSubmit">
+    <label>
+        Where would like to go?
+        <input id="address" type="text" aria-label="address" placeholder="Address" value="">
+    </label>
+    <button id="submit-address">Submit</button>
+</div>
+
 <h1 class="text-center" id="city"></h1>
 <div id="displayAddress"></div>
 <div id="card" class="d-flex justify-content-around mb-3"></div>

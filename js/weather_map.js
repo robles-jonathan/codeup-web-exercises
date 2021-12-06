@@ -5,10 +5,15 @@ $(document).ready(function () {
     const map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: [-98.4705371, 29.5311973],
+        center: [0, 0],
         zoom: 10, // starting zoom
         logoPosition: 'top-left'
     });
+
+    //CREATE MARKER to be manipulated throughout the code
+    const marker = new mapboxgl.Marker({
+        draggable: true
+    })
 
     function reveresSearch(lng, lat){
         reverseGeocode({lng, lat}, MAPBOX_KEY).then(function(results) {
@@ -19,15 +24,19 @@ $(document).ready(function () {
         });
     }
 
-
+    initializeMapAndWeather();
     createPin();//INITIALIZE createPin() FUNCTION
     movePinToLocation();
     map.addControl(new mapboxgl.NavigationControl());//ADDS NAVIGATION CONTROLS
 
-    //CREATE MARKER to be manipulated throughout the code
-    const marker = new mapboxgl.Marker({
-        draggable: true
-    })
+    function initializeMapAndWeather(){
+        var lat = 29.5311973;
+        var lon = -98.4705371;
+        marker.setLngLat([lon,lat]).addTo(map);
+        map.setCenter([lon,lat]);
+        getWeatherInfo(lat,lon);
+        reveresSearch(lon, lat);
+    }
 
     function createPin(){
         map.on('click', (e) => {
@@ -47,12 +56,15 @@ $(document).ready(function () {
             geocode(address, MAPBOX_KEY).then(function (results) {
                 var lat = results[1];
                 var lon = results[0];
-                console.log("lat: " + lat + " \n lon: " + lon)
+                // console.log("lat: " + lat + " \n lon: " + lon)
                 marker.setLngLat([results[0],results[1]]).addTo(map);
                 map.setCenter([results[0],results[1]]);
                 getWeatherInfo(lat,lon);
                 reveresSearch(lon, lat);
-            })
+            });
+            $('#address').val('');
+            // $('.addressSubmit').css('display','none');
+            console.log("im trying to remove input")
         })
     }
 
@@ -65,8 +77,6 @@ $(document).ready(function () {
     // }
     // marker.on('dragend', onDragEnd);
 
-
-    getWeatherInfo(29.5311973, -98.4705371)
 
     function getWeatherInfo(lat, lon) {
         $("#card").empty();
