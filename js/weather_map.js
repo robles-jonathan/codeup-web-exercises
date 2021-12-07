@@ -69,13 +69,16 @@ $(document).ready(function () {
     }
 
 
-    //DISPLAYS LngLat when marker has stopped dragging inside map
-    // function onDragEnd() {
-    //     const lngLat = marker.getLngLat();
-    //     coordinates.style.display = 'block';
-    //     coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
-    // }
-    // marker.on('dragend', onDragEnd);
+    // DISPLAYS LngLat when marker has stopped dragging inside map
+    function onDragEnd() {
+        const lngLat = marker.getLngLat();
+        var lng = lngLat.lng;
+        var lat = lngLat.lat;
+        map.setCenter([lng,lat]);
+        getWeatherInfo(lat, lng);
+        reveresSearch(lng, lat);
+    }
+    marker.on('dragend', onDragEnd);
 
 
     function getWeatherInfo(lat, lon) {

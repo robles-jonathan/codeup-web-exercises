@@ -32,6 +32,9 @@
 
     // fires off a function once marker has been moved on the map
     codeup.on('dragend', function(){
+        var lng = codeup.getLngLat().lng;
+        var lat = codeup.getLngLat().lat;
+        map.setCenter([lng,lat]);
         popup.setLngLat(codeup.getLngLat())
         console.log(codeup.getLngLat());
     })
@@ -56,13 +59,13 @@
     var newPlace = new mapboxgl.Marker();
 
     reverseGeocode({lat: 32.77, lng: -96.79}, MAPBOX_KEY).then(function(results){
-        var res = results.features[0].center;
-        newPlace.setLngLat([res[0],res[1]]);
-        newPlace.addTo(map);
+        // var res = results.features[0].center;
+        // newPlace.setLngLat([res[0],res[1]]);
+        // newPlace.addTo(map);
     })
 
     geocode("lytle, TX, United States", MAPBOX_KEY).then(function (results) {
-        console.log(results)
+        // console.log(results)
         mysteryPlace.setLngLat([results[0],results[1]]);
         mysteryPlace.addTo(map);
     })
