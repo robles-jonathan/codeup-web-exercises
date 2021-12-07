@@ -62,10 +62,11 @@
 
     const house = [{name: "Wilma", role: "Mother", gender: "F"}, {name: "Fred", role: "Father", gender: "M"}, {name: "Pebbles", role: "Daughter", gender: "F"}, {name: "Dino", role: "Pet", gender: "M"}];
 
+    console.log(house);
     house.push({name: "Bam Bam", role: "Son-In-Law", gender: "M"});
-    // house.push("Jimby");
+    house.push("Jimby");
 
-    // console.log(house);
+    console.log(house);
     // house.shift();
 
     // for(let person of house) {
