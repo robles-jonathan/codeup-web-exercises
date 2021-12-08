@@ -87,7 +87,6 @@ $(document).ready(function() {
     // })
 
     //NEW WAY
-    //NOT WORKING!!
     let foodHTML = foodOptions.map(restaurant => `<li>${restaurant.name}</li>`)
     $('#foodList').append(foodHTML)
 
@@ -127,7 +126,7 @@ $(document).ready(function() {
 
 
     let specialties = foodOptions.reduce((uniqueSpecialties, restaurant) => {
-        if(uniqueSpecialties.includes(restaurant.specialty)){
+        if(!uniqueSpecialties.includes(restaurant.specialty)){
             uniqueSpecialties.push(restaurant.specialty)
         }
         return uniqueSpecialties;
