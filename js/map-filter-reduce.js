@@ -43,7 +43,7 @@ $(document).ready(()=> {
       Use .reduce to get the longest email from the list of users.
       Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
      Bonus
-     TODO: Use .reduce to get the unique list of languages from the list of users.
+      Use .reduce to get the unique list of languages from the list of users.
      **/
 
     let threeOrMoreLanguages = users.filter(user => user.languages.length >= 3);
@@ -58,31 +58,42 @@ $(document).ready(()=> {
     let averageYears = totalYears/users.length;
     console.log(averageYears);
 
-    let longestEmail = users.reduce((longestEmail, currentEmail) => {
-        if(longestEmail.email.length > currentEmail.email.length){
-            return longestEmail;
-        }else{
-            return currentEmail;
-        }
-    })
-    console.log(longestEmail)
 
+    //IF STATTEMENT
+    // let longestEmail = users.reduce((longestEmail, currentEmail) => {
+    //     if(longestEmail.email.length > currentEmail.email.length){
+    //         return longestEmail;
+    //     }else{
+    //         return currentEmail;
+    //     }
+    // })
+    // console.log(longestEmail)
+
+
+    //TERNARY OPERATOR
+    let longestEmail = users.reduce((longestEmail, currentEmail) => longestEmail.email.length > currentEmail.email.length ? longestEmail : currentEmail);
+    console.log(longestEmail);
+
+//did not use reduce
     let userNameArray= users.map(users => users.name)
     console.log(userNameArray)
     let string = userNameArray.join(', ');
-    console.log(`Your instructors are: ${string}`)
+    console.log(`Your instructors are: ${string}.`)
 
-    // EXAMPLE
-    // let myArray = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd']
-    // let myArrayWithNoDuplicates = myArray.reduce(function (previousValue, currentValue) {
-    //     if (previousValue.indexOf(currentValue) === -1) {
-    //         previousValue.push(currentValue)
-    //     }
-    //     return previousValue
-    // }, [])
-    //
-    // console.log(myArrayWithNoDuplicates)
+    //Does not give expected output
+    let instructorss = users.reduce((prev, current) =>`${prev} ${current.name} `, "Your instructors are: ");
+    console.log(instructorss)
 
+    let instructors = users.reduce((finalString, user, index) => {
+        if(index === users.length -1){
+            return `${finalString} ${user.name}.`
+        }else {
+            return `${finalString} ${user.name},`
+        }
+    }, "Your instructors are:")
+    console.log(instructors)
+
+    //BONUS
     let completeLanguage = users.reduce((a,e) => a.concat(e.languages),[])
     let uniqueLang = completeLanguage.reduce((uniqueLang, currentValue) =>{
         if(uniqueLang.indexOf(currentValue) === -1){
@@ -91,5 +102,16 @@ $(document).ready(()=> {
         return uniqueLang;
     },([]))
     console.log(uniqueLang);
+
+    //JAYS SOLUTION
+    let uniqueLangs = users.reduce((langList, user) => {
+        for(let lang of user.languages){
+            if(!langList.includes(lang)){
+                langList.push(lang);
+            }
+        }
+        return langList
+    },[])
+    console.log(uniqueLangs);
 
 })
